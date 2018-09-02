@@ -1,8 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+/**
+ * React Material Library
+ * Written by: Sandeep Vattapparambil
+ * Email: sandeepv68@gmail.com
+ * Website: www.sandeepv.in
+ */
 
-ReactDOM.render(<App />, document.getElementById('root'));
+/**
+ * Import react
+ */
+import React from "react";
+import ReactDOM from "react-dom";
+
+/**
+ * Initialize styles
+ */
+import "./index.css";
+
+/**
+ * Import components
+ */
+import Container from "./components/app-container/Container";
+
+/**
+ * Import service worker
+ */
+import registerServiceWorker from "./registerServiceWorker";
+
+/**
+ * Render component on to DOM
+ */
+ReactDOM.render(<Container />, document.getElementById("container"));
+
+/**
+ * Register service worker
+ */
 registerServiceWorker();
