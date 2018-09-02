@@ -1,6 +1,6 @@
 {
   "name": "react-material",
-  "version": "0.0.1",
+  "version": "0.0.1-beta",
   "private": false,
   "dependencies": {
     "autoprefixer": "7.1.6",
