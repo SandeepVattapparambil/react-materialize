@@ -20,9 +20,19 @@ class Navbar extends Component {
    /**
     * Class constructor
     */
-   constructor() {
+   constructor(props) {
       super(props);
-      this.state = {};
+      this.state = {
+         options: {
+            bgColor: "",
+            textColor: "White",
+            type: "fixed",
+            brand: "Logo",
+            brandPosition: '',
+            extended: false,
+
+         }
+      };
    }
 
    /**
@@ -31,7 +41,7 @@ class Navbar extends Component {
    render() {
       return (
          <div className="navbar-fixed">
-            <nav>
+            <nav className="">
                <div className="nav-wrapper">
                   <a href="#!" className="brand-logo">
                      Logo
