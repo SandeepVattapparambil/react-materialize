@@ -1,6 +1,7 @@
 /**
  * Component - Container
- * A basic static grid component
+ * MaterializeCSS static grid-container component
+ * @see {@link https://materializecss.com/grid.html | Grid}
  */
 
 /**

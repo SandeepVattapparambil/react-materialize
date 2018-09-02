@@ -1,7 +1,33 @@
+/**
+ * Component - Navbar
+ * MaterializeCSS Navbar component
+ * @see {@link https://materializecss.com/navbar.html | Navbar}
+ */
+
+/**
+ * Import react library
+ */
 import React, { Component } from "react";
 import "./Navbar.css";
 
+/**
+ * @class
+ * @name Navbar
+ * @description MaterializeCSS Navbar component
+ * @extends Component
+ */
 class Navbar extends Component {
+   /**
+    * Class constructor
+    */
+   constructor() {
+      super(props);
+      this.state = {};
+   }
+
+   /**
+    * Default render method
+    */
    render() {
       return (
          <div className="navbar-fixed">
