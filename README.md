@@ -1,2 +1,3 @@
-# react-materialize
-MaterializeCSS library ported to reactjs.
+<img src="public/img/logo.png"/>
+# React Material
+A simple ReactJS wrapper for MaterializeCSS UI framework.
