@@ -28,9 +28,7 @@ class Navbar extends Component {
             textColor: "White",
             type: "fixed",
             brand: "Logo",
-            brandPosition: '',
-            extended: false,
-
+            brandPosition: ""
          }
       };
    }
