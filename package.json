@@ -1,0 +1,38 @@
+{
+  "name": "react-material",
+  "version": "0.0.1",
+  "private": false,
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "description": "MaterializeCSS library ported to reactjs.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reactMaterial/react-material.git"
+  },
+  "keywords": [
+    "reactjs",
+    "materializecss",
+    "material-design",
+    "react-material",
+    "UI",
+    "UX",
+    "Sandeep",
+    "Vattapparambil"
+  ],
+  "author": "Sandeep Vattapparambil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reactMaterial/react-material/issues"
+  },
+  "homepage": "https://github.com/reactMaterial/react-material#readme"
+}
