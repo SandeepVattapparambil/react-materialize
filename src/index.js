@@ -39,7 +39,7 @@ ReactDOM.render(
       textColor="white-text"
       centerLogo="false"
    >
-   <NavbarLinks align="right"/>
+   <NavbarLinks align="right" list={[{sass: "sass.html"}, {badges: "badges.html"}]}/>
    </Navbar>,
    document.getElementById("header")
 );

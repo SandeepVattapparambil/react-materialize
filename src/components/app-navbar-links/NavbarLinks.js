@@ -27,7 +27,8 @@ class NavbarLinks extends Component {
         };
         this.state = {
             options: {
-                align: config.align || "right"
+                align: config.align || "right",
+                list: config.list || []
             }
         };
     }
@@ -35,11 +36,15 @@ class NavbarLinks extends Component {
     * Default render method
     */
     render() {
+        console.log(this.state.options.list);
         return (
             <ul id="nav-mobile" className={`${this.state.options.align} hide-on-med-and-down`}>
+            {this.state.options.list.map((item) => {
                 <li>
-                    <a href="sass.html">Sass</a>
+                    <a href={`${item.}`}>item</a>
                 </li>
+            })}
+                
             </ul>
         );
     }
