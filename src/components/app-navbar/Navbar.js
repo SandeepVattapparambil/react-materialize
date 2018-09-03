@@ -24,13 +24,22 @@ class Navbar extends Component {
       super(props);
       this.state = {
          options: {
-            bgColor: "",
-            textColor: "White",
-            type: "fixed",
-            brand: "Logo",
-            brandPosition: ""
+            align: "right",
+            centerLogo: "false",
+            color: " ",
+            fixed: "false",
+            textColor: " "
          }
       };
+   }
+
+   /**
+    * Lifecycle method to trigger on mount
+    */
+   componentDidMount() {
+      let options = { ...this.props };
+      
+      console.log(options);
    }
 
    /**
@@ -46,10 +55,10 @@ class Navbar extends Component {
                   </a>
                   <ul className="right hide-on-med-and-down">
                      <li>
-                        <a href="sass.html">Sass</a>
+                        <a href="sass.html"> Sass </a>
                      </li>
                      <li>
-                        <a href="badges.html">Components</a>
+                        <a href="badges.html"> Components </a>
                      </li>
                   </ul>
                </div>

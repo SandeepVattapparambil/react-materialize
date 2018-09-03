@@ -30,7 +30,7 @@ import registerServiceWorker from "./registerServiceWorker";
 /**
  * Render component on to DOM
  */
-ReactDOM.render(<Navbar />, document.getElementById("header"));
+ReactDOM.render(<Navbar fixed="true" color="lime" text-color="white" align="left" center-logo="false"/>, document.getElementById("header"));
 ReactDOM.render(<Container />, document.getElementById("container"));
 
 /**
