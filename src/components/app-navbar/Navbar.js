@@ -47,14 +47,15 @@ class Navbar extends Component {
                   <a href="#!" className={`brand-logo ${this.state.options.centerLogo === "true" ? "center" : ""} ${this.state.options.textColor}`}>
                      {this.state.options.logo}
                   </a>
-                  <ul className="right hide-on-med-and-down">
+                  {/* <ul className="right hide-on-med-and-down">
                      <li>
                         <a href="sass.html">Sass</a>
                      </li>
                      <li>
                         <a href="badges.html">Components</a>
                      </li>
-                  </ul>
+                  </ul> */}
+                  {this.props.children}
                </div>
             </nav>
          </div>
