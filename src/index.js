@@ -20,6 +20,7 @@ import "./index.css";
  * Import components
  */
 import Navbar from "./components/app-navbar/Navbar";
+import NavbarLinks from "./components/app-navbar-links/NavbarLinks";
 import Container from "./components/app-container/Container";
 
 /**
@@ -37,7 +38,9 @@ ReactDOM.render(
       color="lime"
       textColor="white-text"
       centerLogo="false"
-   ></Navbar>,
+   >
+   <NavbarLinks align="right"/>
+   </Navbar>,
    document.getElementById("header")
 );
 
