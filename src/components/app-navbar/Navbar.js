@@ -24,10 +24,10 @@ class Navbar extends Component {
       super(props);
       this.state = {
          options: {
-            align: "right",
-            centerLogo: "false",
+            align: " ",
+            centerLogo: " ",
             color: " ",
-            fixed: "false",
+            fixed: " ",
             textColor: " "
          }
       };
@@ -37,11 +37,23 @@ class Navbar extends Component {
     * Lifecycle method to trigger on mount
     */
    componentDidMount() {
-      let options = { ...this.props };
-      
-      console.log(options);
+      let self = this;
+      let config = { ...self.props };
+      self.setState({
+         options: {
+            align: config.align || "right",
+            centerLogo: config.centerLogo || "false",
+            color: config.color || " ",
+            fixed: config.fixed || "false",
+            textColor: config.textColor || " "
+         }
+      });
    }
 
+   componentDidUpdate() {
+      console.log(this.state);
+   }
+   
    /**
     * Default render method
     */
