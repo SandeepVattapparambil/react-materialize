@@ -11,6 +11,11 @@ import React, {Component, Fragment} from "react";
 import "./NavbarLinks.css";
 
 /**
+ * Import components
+ */
+import Icon from "../app-icon/Icon";
+
+/**
  * Import component fragments
  */
 import ListFragment from "./app-list-fragment/ListFragment";
@@ -38,6 +43,9 @@ class NavbarLinks extends Component {
         };
     }
 
+    /**
+     * DOM ready event
+     */
     componentDidMount() {
         $(".sidenav").sidenav();
     }
@@ -48,7 +56,7 @@ class NavbarLinks extends Component {
         return (
             <Fragment>
                 <a href="#" data-target="mobile-demo" className="sidenav-trigger">
-                    <i className="material-icons">menu</i>
+                    <Icon icon="menu" color="white-text"/>
                 </a>
                 <ul
                     id="nav-mobile"
