@@ -1,7 +1,7 @@
 /**
  * Component - Badge
  * MaterializeCSS static Badge component
- * @see {@link https://materializecss.com/grid.html | Grid}
+ * @see {@link https://materializecss.com/badges.html | Badge}
  */
 
 /**
