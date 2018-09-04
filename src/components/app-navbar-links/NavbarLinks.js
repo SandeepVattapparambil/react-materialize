@@ -7,7 +7,7 @@
 /**
  * Import react library
  */
-import React, { Component } from "react";
+import React, { Component, Fragment  } from "react";
 import "./NavbarLinks.css";
 
 /**
@@ -41,7 +41,7 @@ class NavbarLinks extends Component {
     */
    render() {
       return (
-         <div>
+         <Fragment>
             <a href="#" data-target="mobile-demo" className="sidenav-trigger">
                <i className="material-icons">menu</i>
             </a>
@@ -59,20 +59,15 @@ class NavbarLinks extends Component {
             </ul>
 
             <ul className="sidenav" id="mobile-demo">
-               <li>
-                  <a href="sass.html">Sass</a>
-               </li>
-               <li>
-                  <a href="badges.html">Components</a>
-               </li>
-               <li>
-                  <a href="collapsible.html">Javascript</a>
-               </li>
-               <li>
-                  <a href="mobile.html">Mobile</a>
-               </li>
+            {this.state.options.list.map((item, key) => {
+                  return (
+                     <li key={key} className={`${item.active ? "active" : ""}`}>
+                        <a href={`${item.link}`}>{item.name}</a>
+                     </li>
+                  );
+               })}
             </ul>
-         </div>
+         </Fragment>
       );
    }
 }
