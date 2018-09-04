@@ -33,10 +33,10 @@ import registerServiceWorker from "./registerServiceWorker";
  */
 ReactDOM.render(
     <Navbar
-    logo="Hello"
+    logo="React Material"
     fixed="true"
-    color="lime"
-    textColor="white-text"
+    color="grey darken-3"
+    textColor="red-text tex-lighten-1"
     centerLogo="false">
     <NavbarLinks
         align="right"

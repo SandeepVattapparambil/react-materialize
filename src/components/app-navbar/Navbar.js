@@ -7,7 +7,7 @@
 /**
  * Import react library
  */
-import React, { Component } from "react";
+import React, {Component, Fragment} from "react";
 import "./Navbar.css";
 
 /**
@@ -17,42 +17,53 @@ import "./Navbar.css";
  * @extends Component
  */
 class Navbar extends Component {
-   /**
+    /**
     * Class constructor
     */
-   constructor(props) {
-      super(props);
-      let config = {
-         ...props
-      };
-      this.state = {
-         options: {
-            logo: config.logo || "Logo",
-            centerLogo: config.centerLogo || "false",
-            color: config.color || " ",
-            fixed: config.fixed || "false",
-            textColor: config.textColor || " "
-         }
-      };
-   }
+    constructor(props) {
+        super(props);
+        let config = {
+            ...props
+        };
+        this.state = {
+            options: {
+                logo: config.logo || "Logo",
+                centerLogo: config.centerLogo || "false",
+                color: config.color || " ",
+                fixed: config.fixed || "false",
+                textColor: config.textColor || " "
+            }
+        };
+    }
 
-   /**
+    componentDidUpdate(){
+        $('.tabs').tabs();
+    }
+
+    /**
     * Default render method
     */
-   render() {
-      return (
-         <div className={`${this.state.options.fixed === 'true' ? 'navbar-fixed' : ''}`}>
-            <nav className={`${this.state.options.color}`}>
-               <div className="nav-wrapper">
-                  <a href="#!" className={`brand-logo ${this.state.options.centerLogo === "true" ? "center" : ""} ${this.state.options.textColor}`}>
-                     {this.state.options.logo}
-                  </a>
-                  {this.props.children}
-               </div>
-            </nav>
-         </div>
-      );
-   }
+    render() {
+        return (
+            <div
+                className={`${this.state.options.fixed === "true"
+                ? "navbar-fixed"
+                : ""}`}>
+                <nav className={`${this.state.options.color}`}>
+                    <div className="nav-wrapper">
+                        <a
+                            href="#!"
+                            className={`brand-logo ${this.state.options.centerLogo === "true"
+                            ? "center"
+                            : ""} ${this.state.options.textColor}`}>
+                            {this.state.options.logo}
+                        </a>
+                        {this.props.children}
+                    </div>
+                </nav>
+            </div>
+        );
+    }
 }
 
 export default Navbar;
