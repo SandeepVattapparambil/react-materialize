@@ -23,6 +23,7 @@ import Navbar from "./components/app-navbar/Navbar";
 import NavbarLinks from "./components/app-navbar-links/NavbarLinks";
 import Row from "./components/app-row/Row";
 import Container from "./components/app-container/Container";
+import Badge from "./components/app-badge/Badge";
 
 /**
  * Import service worker
@@ -56,8 +57,7 @@ ReactDOM.render(
 ReactDOM.render(
     <Container>
     <Row>
-        <span className="lime new badge">4</span>
-        <span className="lime white-text badge">1</span>
+        <Badge type="new" data="1" color="lime"/>
     </Row>
 
 </Container>, document.getElementById("container"));
