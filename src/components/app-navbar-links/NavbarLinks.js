@@ -7,7 +7,7 @@
 /**
  * Import react library
  */
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./NavbarLinks.css";
 
 /**
@@ -17,36 +17,63 @@ import "./NavbarLinks.css";
  * @extends Component
  */
 class NavbarLinks extends Component {
-    /**
+   /**
     * Class constructor
     */
-    constructor(props) {
-        super(props);
-        let config = {
-            ...props
-        };
-        this.state = {
-            options: {
-                align: config.align || "right",
-                list: config.list || []
-            }
-        };
-    }
-    /**
+   constructor(props) {
+      super(props);
+      let config = {
+         ...props
+      };
+      this.state = {
+         options: {
+            align: config.align || "right",
+            list: config.list || []
+         }
+      };
+   }
+
+   componentDidMount() {
+      $(".sidenav").sidenav();
+   }
+   /**
     * Default render method
     */
-    render() {
-        console.log(this.state.options.list);
-        return (
-            <ul id="nav-mobile" className={`${this.state.options.align} hide-on-med-and-down`}>
-            {this.state.options.list.map((item) => {
-                <li>
-                    <a href={`${item.}`}>item</a>
-                </li>
-            })}
-                
+   render() {
+      return (
+         <div>
+            <a href="#" data-target="mobile-demo" className="sidenav-trigger">
+               <i className="material-icons">menu</i>
+            </a>
+            <ul
+               id="nav-mobile"
+               className={`${this.state.options.align} hide-on-med-and-down`}
+            >
+               {this.state.options.list.map((item, key) => {
+                  return (
+                     <li key={key} className={`${item.active ? "active" : ""}`}>
+                        <a href={`${item.link}`}>{item.name}</a>
+                     </li>
+                  );
+               })}
             </ul>
-        );
-    }
+
+            <ul className="sidenav" id="mobile-demo">
+               <li>
+                  <a href="sass.html">Sass</a>
+               </li>
+               <li>
+                  <a href="badges.html">Components</a>
+               </li>
+               <li>
+                  <a href="collapsible.html">Javascript</a>
+               </li>
+               <li>
+                  <a href="mobile.html">Mobile</a>
+               </li>
+            </ul>
+         </div>
+      );
+   }
 }
 export default NavbarLinks;

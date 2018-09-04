@@ -32,19 +32,28 @@ import registerServiceWorker from "./registerServiceWorker";
  * Render component on to DOM
  */
 ReactDOM.render(
-   <Navbar
-      logo="Hello"
-      fixed="true"
-      color="lime"
-      textColor="white-text"
-      centerLogo="false"
-   >
-   <NavbarLinks align="right" list={[{sass: "sass.html"}, {badges: "badges.html"}]}/>
-   </Navbar>,
-   document.getElementById("header")
-);
+    <Navbar
+    logo="Hello"
+    fixed="true"
+    color="lime"
+    textColor="white-text"
+    centerLogo="false">
+    <NavbarLinks
+        align="right"
+        list={[
+        {
+            name: "Sass",
+            link: "sass.html",
+            active: true
+        }, {
+            name: "Badges",
+            link: "badges.html"
+        }
+    ]}/>
+</Navbar>, document.getElementById("header"));
 
-ReactDOM.render(<Container />, document.getElementById("container"));
+ReactDOM.render(
+    <Container/>, document.getElementById("container"));
 
 /**
  * Register service worker
