@@ -24,6 +24,7 @@ import NavbarLinks from "./components/app-navbar-links/NavbarLinks";
 import Row from "./components/app-row/Row";
 import Container from "./components/app-container/Container";
 import Badge from "./components/app-badge/Badge";
+import Col from "./components/app-column/Column";
 
 /**
  * Import service worker
@@ -57,9 +58,11 @@ ReactDOM.render(
 ReactDOM.render(
     <Container>
     <Row>
-        <Badge type="new" data="1" color="lime"/>
-    </Row>
+        <Col small="s6" medium="m6" large="l6" offset={["s2", "m3", "l1"]}>
+            <Badge type="new" data="1" color="lime"/>
+        </Col>
 
+    </Row>
 </Container>, document.getElementById("container"));
 
 /**
