@@ -7,17 +7,25 @@
 /**
  * Import react library
  */
-import React, { Component } from "react";
-import "./Container.css";
+import React, {Component} from "react";
 
 /**
+ * @class
  * @name Container
- * @function
- * @returns {String} - An HTML dom element
- * Functional component structure is used because of its atomic nature.
+ * @description MaterializeCSS grid Container.
+ * @extends Component
  */
-let Container = () => {
-   return <div className="container" />;
-};
 
+class Container extends Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div className="container">
+                {this.props.children}
+            </div>
+        )
+    }
+}
 export default Container;
