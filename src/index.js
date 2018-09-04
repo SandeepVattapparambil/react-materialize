@@ -58,7 +58,7 @@ ReactDOM.render(
 ReactDOM.render(
     <Container>
     <Row>
-        <Col small="s6" medium="m6" large="l6" offset={["s2", "m3", "l1"]}>
+        <Col small="s6" medium="m6" large="l6" offset={["s2", "m3", "l1"]} push="s1" pull="s3">
             <Badge type="new" data="1" color="lime"/>
         </Col>
 

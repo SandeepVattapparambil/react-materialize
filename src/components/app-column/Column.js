@@ -27,7 +27,9 @@ class Column extends Component {
             small: config.small || " ",
             medium: config.medium || " ",
             large: config.large || " ",
-            offset: config.offset || []
+            offset: config.offset || [],
+            push: config.push || " ",
+            pull: config.pull || " "
          }
       };
    }
@@ -48,7 +50,7 @@ class Column extends Component {
       });
       let offsetString = stringArray.join(" ");
       return (
-         <div className={`col ${this.state.options.small} ${offsetString}`}>
+         <div className={`col ${this.state.options.small} ${offsetString} ${this.state.options.push} ${this.state.options.pull}`}>
             {this.props.children}
          </div>
       );
