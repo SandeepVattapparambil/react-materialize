@@ -15,7 +15,6 @@ import React, {Component} from "react";
  * @description MaterializeCSS Badge.
  * @extends Component
  */
-
 class Badge extends Component {
     constructor(props) {
         super(props);
