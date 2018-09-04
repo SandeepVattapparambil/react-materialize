@@ -49,6 +49,7 @@ class NavbarLinks extends Component {
     componentDidMount() {
         $(".sidenav").sidenav();
     }
+    
     /**
     * Default render method
     */
