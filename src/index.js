@@ -60,6 +60,7 @@ ReactDOM.render(
 
 ReactDOM.render(
     <Container>
+        <br/>
     <Row>
         <Col
             small="s6"
@@ -76,8 +77,11 @@ ReactDOM.render(
                 disabled={false}
                 label="Click"
                 color="lime"
-                textColor="white-text">
-                <Icon icon="cloud"></Icon>
+                textColor="white-text"
+                wavesEffect={true}
+                wavesType="regular"
+                waveColor="light">
+                <Icon icon="cloud" align="left"></Icon>
             </Button>
         </Col>
     </Row>
