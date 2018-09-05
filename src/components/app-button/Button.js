@@ -27,15 +27,19 @@ class Button extends Component {
                 type: config.type || "btn",
                 size: config.size || " ",
                 label: config.label || " ",
-                disabled: config.disabled || false 
+                disabled: config.disabled || false,
+                color: config.color || " ",
+                textColor: config.color || "white-text",
+                wavesEffect: config.wavesEffect || true,
+                wavesType: config.wavesType || " ",
+                wavesColor: config.config || " "
             }
         };
     }
     render() {
         return (
-            <a class={`waves-effect waves-light btn`}>
-                {this.props.children}
-                {this.state.options.config.label}
+            <a className={`waves-effect waves-light btn`}>
+                {this.state.options.label} {this.props.children}
             </a>
         );
     }
