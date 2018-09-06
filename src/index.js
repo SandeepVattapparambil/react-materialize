@@ -73,7 +73,7 @@ ReactDOM.render(
             <Divider/>
             <Button
                 type="raised"
-                size="normal"
+                size="large"
                 disabled={false}
                 label="Click"
                 color="lime"

@@ -108,8 +108,9 @@ class Button extends Component {
                 ${btnType} 
                 ${btnSize} 
                 ${this.state.options.color} 
-                ${this.state.options.textColor}`}>
-                {this.state.options.label}
+                ${this.state.options.textColor}
+                ${this.state.options.disabled ? 'disabled' : ''}`}>
+                {this.state.options.type === "floating" ? '': this.state.options.label}
                 {this.props.children}
             </a>
         );
