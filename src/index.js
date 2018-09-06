@@ -80,7 +80,7 @@ ReactDOM.render(
                 textColor="white-text"
                 wavesEffect={true}
                 wavesType="regular"
-                waveColor="light">
+                wavesColor="waves-red">
                 <Icon icon="cloud" align="left"></Icon>
             </Button>
         </Col>

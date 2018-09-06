@@ -32,7 +32,7 @@ class Button extends Component {
                 textColor: config.textColor || "white-text",
                 wavesEffect: config.wavesEffect || true,
                 wavesType: config.wavesType || " ",
-                wavesColor: config.config || " "
+                wavesColor: config.wavesColor || " "
             }
         };
         this.availableWavesColors = [
@@ -71,7 +71,9 @@ class Button extends Component {
         }
 
         let btnSize;
-        if (this.state.options.size === 'normal') {} else if (this.state.options.size === 'large') {
+        if (this.state.options.size === 'normal') {
+            btnSize = '';
+        } else if (this.state.options.size === 'large') {
             btnSize = 'btn-large';
         } else if (this.state.options.size === 'small') {
             btnSize = 'btn-small';
@@ -83,7 +85,7 @@ class Button extends Component {
         return (
             <a
                 className={`
-                ${this.state.options.wavesEffect ? this.state.options.wavesEffect : ''} 
+                ${this.state.options.wavesEffect ? 'waves-effect' : ''} 
                 ${this._wavesColorIsValid(this.state.options.wavesColor) ? this.state.options.wavesColor : ''} 
                 ${btnType} 
                 ${btnSize} 
