@@ -35,7 +35,12 @@ class Button extends Component {
                 wavesColor: config.config || " "
             }
         };
+        this.availableWavesColor = ['waves-light', 'waves-red', 'waves-yellow', 'waves-orange', 'waves-purple', 'waves-green', 'waves-teal'];
     }
+
+    _wavesColorIsValid = (color) => {
+
+    };
 
     render() {
         let btnType;
@@ -60,9 +65,7 @@ class Button extends Component {
 
         return (
             <a
-                className={`waves-effect waves-light ${btnType} ${btnSize
-                ? btnSize
-                : ''} ${this.state.options.color} ${this.state.options.textColor}`}>
+                className={`waves-effect waves-light ${btnType} ${btnSize} ${this.state.options.color} ${this.state.options.textColor}`}>
                 {this.state.options.label}
                 {this.props.children}
             </a>
