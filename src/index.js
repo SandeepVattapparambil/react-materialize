@@ -114,7 +114,7 @@ ReactDOM.render(
                 {
                     color: "lime",
                     icon: "insert_chart",
-                    onClick: {() => { alert('hello')}}
+                    onClick: () => { alert('hello')}
                 }
             ]}/>
         </Col>

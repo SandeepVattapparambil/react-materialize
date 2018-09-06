@@ -58,7 +58,11 @@ class Fab extends Component {
 
    render() {
       return (
-         <div className={`fixed-action-btn ${this.state.options.toolbarEnabled ? 'toolbar' :''}`}>
+         <div
+            className={`fixed-action-btn ${
+               this.state.options.toolbarEnabled ? "toolbar" : ""
+            }`}
+         >
             <a
                className={`btn-floating ${this.state.options.large ? "btn-large" : ""} ${
                   this.state.options.color
@@ -73,7 +77,11 @@ class Fab extends Component {
                {this.state.options.buttons.map((item, key) => {
                   return (
                      <li key={key}>
-                        <a className={`btn-floating ${item.color}`}>
+                        <a
+                           className={`btn-floating ${item.color}`}
+                           href={`${item.link ? item.link : ""}`}
+                           onClick={item.onClick ? item.onClick : ""}
+                        >
                            <i className="material-icons">{item.icon}</i>
                         </a>
                      </li>
