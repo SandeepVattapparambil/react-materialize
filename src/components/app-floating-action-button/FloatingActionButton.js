@@ -12,7 +12,7 @@ import React, { Component } from "react";
 /**
  * Import components
  */
-import Icon from '../app-icon/Icon';
+import Icon from "../app-icon/Icon";
 
 /**
  * @class
@@ -28,12 +28,13 @@ class Fab extends Component {
       };
       this.state = {
          options: {
-             color: config.color || " ",
-             icon: config.icon || " ",
-             large: config.large || true,
-             direction: config.direction || "top",
-             hoverEnabled: config.hoverEnabled || true,
-             toolbarEnabled: config.toolbarEnabled || false
+            color: config.color || " ",
+            icon: config.icon || " ",
+            large: config.large || true,
+            direction: config.direction || "top",
+            hoverEnabled: config.hoverEnabled || false,
+            toolbarEnabled: config.toolbarEnabled || false,
+            buttons: config.buttons || []
          }
       };
    }
@@ -46,6 +47,8 @@ class Fab extends Component {
       };
       let instance = M.FloatingActionButton.init(element, options);
       //TODO: The following methods are available on instance
+      //https://stackoverflow.com/questions/37949981/call-child-method-from-parent
+      //https://codesandbox.io/embed/kw5mn93wmr
       /*
       instance.open();
       instance.close();
@@ -55,31 +58,27 @@ class Fab extends Component {
 
    render() {
       return (
-         <div className="fixed-action-btn">
-            <a className={`btn-floating ${this.state.options.large ? 'btn-large' : ''} ${this.state.options.color}`}>
-               <Icon icon={this.state.options.icon} size={this.state.options.large ? 'large' : ''}/>
+         <div className={`fixed-action-btn ${this.state.options.toolbarEnabled ? 'toolbar' :''}`}>
+            <a
+               className={`btn-floating ${this.state.options.large ? "btn-large" : ""} ${
+                  this.state.options.color
+               }`}
+            >
+               <Icon
+                  icon={this.state.options.icon}
+                  size={this.state.options.large ? "large" : ""}
+               />
             </a>
             <ul>
-               <li>
-                  <a className="btn-floating red">
-                     <i className="material-icons">insert_chart</i>
-                  </a>
-               </li>
-               <li>
-                  <a className="btn-floating yellow darken-1">
-                     <i className="material-icons">format_quote</i>
-                  </a>
-               </li>
-               <li>
-                  <a className="btn-floating green">
-                     <i className="material-icons">publish</i>
-                  </a>
-               </li>
-               <li>
-                  <a className="btn-floating blue">
-                     <i className="material-icons">attach_file</i>
-                  </a>
-               </li>
+               {this.state.options.buttons.map((item, key) => {
+                  return (
+                     <li key={key}>
+                        <a className={`btn-floating ${item.color}`}>
+                           <i className="material-icons">{item.icon}</i>
+                        </a>
+                     </li>
+                  );
+               })}
             </ul>
          </div>
       );

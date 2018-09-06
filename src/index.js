@@ -95,10 +95,28 @@ ReactDOM.render(
                 textColor="white-text"
                 wavesEffect={true}
                 wavesType="regular"
-                wavesColor="waves-red">
+                wavesColor="waves-red" onClick={() => {
+                    alert('hello');
+                }}>
                 <Icon icon="cloud" align="left"></Icon>
             </Button>
-            <Fab color="lime" icon="mode_edit" large={true}/>
+            <Fab
+                color="lime"
+                icon="mode_edit"
+                large={true}
+                hoverEnabled={true}
+                toolbarEnabled={false}
+                buttons={[{
+                    color: "lime",
+                    icon: "insert_chart",
+                    link: "https://www.google.com"
+                },
+                {
+                    color: "lime",
+                    icon: "insert_chart",
+                    onClick: {() => { alert('hello')}}
+                }
+            ]}/>
         </Col>
     </Row>
 </Container>, document.getElementById("container"));
