@@ -24,7 +24,7 @@ class Button extends Component {
         };
         this.state = {
             options: {
-                type: config.type || "btn",
+                type: config.type || "raised",
                 size: config.size || " ",
                 label: config.label || " ",
                 disabled: config.disabled || false,
@@ -35,11 +35,17 @@ class Button extends Component {
                 wavesColor: config.config || " "
             }
         };
-        this.availableWavesColor = ['waves-light', 'waves-red', 'waves-yellow', 'waves-orange', 'waves-purple', 'waves-green', 'waves-teal'];
+        this.availableWavesColors = ['waves-light', 'waves-red', 'waves-yellow', 'waves-orange', 'waves-purple', 'waves-green', 'waves-teal'];
+        this.availableSizes = ['normal', 'small', 'large'];
+        this.availableTypes = ['raised', 'floating', 'flat'];
     }
 
     _wavesColorIsValid = (color) => {
-
+        if(this.availableWavesColors.includes(color)){
+            return true;
+        }else {
+            console.warn();
+        }
     };
 
     render() {
