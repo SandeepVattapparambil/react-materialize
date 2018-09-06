@@ -98,7 +98,7 @@ ReactDOM.render(
                 wavesColor="waves-red">
                 <Icon icon="cloud" align="left"></Icon>
             </Button>
-            <Fab/>
+            <Fab color="lime" icon="mode_edit"/>
         </Col>
     </Row>
 </Container>, document.getElementById("container"));

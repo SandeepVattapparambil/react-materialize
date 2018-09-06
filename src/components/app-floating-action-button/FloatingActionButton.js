@@ -10,6 +10,11 @@
 import React, { Component } from "react";
 
 /**
+ * Import components
+ */
+import Icon from '../app-icon/Icon';
+
+/**
  * @class
  * @name Fab
  * @description MaterializeCSS Floating Action Button Component.
@@ -22,7 +27,13 @@ class Fab extends Component {
          ...props
       };
       this.state = {
-         options: {}
+         options: {
+             color: config.color || " ",
+             icon: config.icon || " ",
+             direction: config.direction || "top",
+             hoverEnabled: config.hoverEnabled || true,
+             toolbarEnabled: config.toolbarEnabled || false
+         }
       };
    }
    componentDidMount() {
@@ -45,7 +56,7 @@ class Fab extends Component {
       return (
          <div className="fixed-action-btn">
             <a className="btn-floating btn-large red">
-               <i className="large material-icons">mode_edit</i>
+               <Icon icon="mode_edit" size="large"/>
             </a>
             <ul>
                <li>
