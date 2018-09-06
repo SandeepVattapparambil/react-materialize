@@ -28,6 +28,7 @@ import Col from "./components/app-column/Column";
 import Divider from "./components/app-divider/Divider";
 import Icon from "./components/app-icon/Icon";
 import Button from "./components/app-button/Button";
+import Breadcrumbs from "./components/app-breadcrumbs/Breadcrumbs";
 
 /**
  * Import service worker
@@ -60,7 +61,20 @@ ReactDOM.render(
 
 ReactDOM.render(
     <Container>
-        <br/>
+    <Breadcrumbs
+        list={[
+        {
+            name: "First",
+            link: "#!"
+        }, {
+            name: "Second",
+            link: "#!"
+        }, {
+            name: "Third",
+            link: "#!"
+        }
+    ]}/>
+    <br/>
     <Row>
         <Col
             small="s6"
