@@ -37,9 +37,19 @@ class Button extends Component {
         };
     }
     render() {
+        let btnType;
+        if (this.state.options.type === 'raised') {
+            btnType = "btn";
+        } else if (this.state.options.type === 'floating') {
+            btnType = "btn-floating";
+        } else if (this.state.options.type === 'flat') {
+            btnType = "btn-flat";
+        }
         return (
-            <a className={`waves-effect waves-light btn`}>
-                {this.state.options.label} {this.props.children}
+            <a
+                className={`waves-effect waves-light ${btnType} ${this.state.options.color} ${this.state.options.textColor}`}>
+                {this.state.options.label}
+                {this.props.children}
             </a>
         );
     }
