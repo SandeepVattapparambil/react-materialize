@@ -1,0 +1,3 @@
+/**
+ * Global Error logging library
+ */
