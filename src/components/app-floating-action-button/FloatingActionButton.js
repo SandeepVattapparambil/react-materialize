@@ -16,6 +16,31 @@ import React, { Component } from "react";
  * @extends Component
  */
 class Fab extends Component {
+   constructor(props) {
+      super(props);
+      let config = {
+         ...props
+      };
+      this.state = {
+         options: {}
+      };
+   }
+   componentDidMount() {
+      let element = document.querySelectorAll(".fixed-action-btn");
+      let options = {
+         direction: "top",
+         hoverEnabled: false,
+         toolbarEnabled: false
+      };
+      let instance = M.FloatingActionButton.init(element, options);
+      //The following methods are available on instance
+      /*
+      instance.open();
+      instance.close();
+      instance.destroy();
+      */
+   }
+
    render() {
       return (
          <div className="fixed-action-btn">

@@ -29,6 +29,7 @@ import Divider from "./components/app-divider/Divider";
 import Icon from "./components/app-icon/Icon";
 import Button from "./components/app-button/Button";
 import Breadcrumbs from "./components/app-breadcrumbs/Breadcrumbs";
+import Fab from "./components/app-floating-action-button/FloatingActionButton";
 
 /**
  * Import service worker
@@ -97,6 +98,7 @@ ReactDOM.render(
                 wavesColor="waves-red">
                 <Icon icon="cloud" align="left"></Icon>
             </Button>
+            <Fab/>
         </Col>
     </Row>
 </Container>, document.getElementById("container"));
