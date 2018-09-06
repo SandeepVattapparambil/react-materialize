@@ -30,6 +30,7 @@ class Fab extends Component {
          options: {
              color: config.color || " ",
              icon: config.icon || " ",
+             large: config.large || true,
              direction: config.direction || "top",
              hoverEnabled: config.hoverEnabled || true,
              toolbarEnabled: config.toolbarEnabled || false
@@ -39,12 +40,12 @@ class Fab extends Component {
    componentDidMount() {
       let element = document.querySelectorAll(".fixed-action-btn");
       let options = {
-         direction: "top",
-         hoverEnabled: false,
-         toolbarEnabled: false
+         direction: this.state.options.direction,
+         hoverEnabled: this.state.options.hoverEnabled,
+         toolbarEnabled: this.state.options.toolbarEnabled
       };
       let instance = M.FloatingActionButton.init(element, options);
-      //The following methods are available on instance
+      //TODO: The following methods are available on instance
       /*
       instance.open();
       instance.close();
@@ -55,8 +56,8 @@ class Fab extends Component {
    render() {
       return (
          <div className="fixed-action-btn">
-            <a className="btn-floating btn-large red">
-               <Icon icon="mode_edit" size="large"/>
+            <a className={`btn-floating ${this.state.options.large ? 'btn-large' : ''} ${this.state.options.color}`}>
+               <Icon icon={this.state.options.icon} size={this.state.options.large ? 'large' : ''}/>
             </a>
             <ul>
                <li>
