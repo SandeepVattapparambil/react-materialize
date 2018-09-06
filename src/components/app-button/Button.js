@@ -57,34 +57,52 @@ class Button extends Component {
         }
     };
 
+    _sizeIsValid = (size) => {
+        if (this.availableSizes.includes(size)) {
+            return true;
+        } else {
+            console.warn('ReactMaterial Error: Button attr - size is empty or invalid \n Component will re' +
+                    'nder abnormal ui.');
+            return false;
+        }
+    };
+
+    _typeIsInvalid = (type) => {
+        if (this.availableTypes.includes(type)) {
+            return true;
+        } else {
+            console.warn('ReactMaterial Error: Button attr - type is empty or invalid \n Component will re' +
+                    'nder abnormal ui.');
+            return false;
+        }
+    };
+
     render() {
         let btnType;
-        if (this.state.options.type === 'raised') {
-            btnType = "btn";
-        } else if (this.state.options.type === 'floating') {
-            btnType = "btn-floating";
-        } else if (this.state.options.type === 'flat') {
-            btnType = "btn-flat";
-        } else {
-            console.error('ReactMaterial Error: Button attr - type is empty or invalid \n Component will re' +
-                    'nder abnormal ui.');
+        if (this._typeIsInvalid(this.state.options.type)) {
+            if (this.state.options.type === 'raised') {
+                btnType = "btn";
+            } else if (this.state.options.type === 'floating') {
+                btnType = "btn-floating";
+            } else if (this.state.options.type === 'flat') {
+                btnType = "btn-flat";
+            }
         }
 
         let btnSize;
-        if (this.state.options.size === 'normal') {
-            btnSize = '';
-        } else if (this.state.options.size === 'large') {
-            btnSize = 'btn-large';
-        } else if (this.state.options.size === 'small') {
-            btnSize = 'btn-small';
-        } else if (this.state.options.size !== ' ') {
-            console.warn('ReactMaterial Warning: Button attr - size is invalid \n Component will render ab' +
-                    'normal ui.');
+        if (this._sizeIsValid(this.state.options.size)) {
+            if (this.state.options.size === 'normal') {
+                btnSize = '';
+            } else if (this.state.options.size === 'large') {
+                btnSize = 'btn-large';
+            } else if (this.state.options.size === 'small') {
+                btnSize = 'btn-small';
+            }
         }
 
         return (
             <a
-                className={`
+                className={` 
                 ${this.state.options.wavesEffect ? 'waves-effect' : ''} 
                 ${this._wavesColorIsValid(this.state.options.wavesColor) ? this.state.options.wavesColor : ''} 
                 ${btnType} 
