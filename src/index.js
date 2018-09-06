@@ -95,9 +95,12 @@ ReactDOM.render(
                 textColor="white-text"
                 wavesEffect={true}
                 wavesType="regular"
-                wavesColor="waves-red" onClick={() => {
+                wavesColor="waves-red" 
+                href="http://www.sandeepv.in"
+                onClick={() => {
                     alert('hello');
-                }}>
+                }}
+                >
                 <Icon icon="cloud" align="left"></Icon>
             </Button>
             <Fab
