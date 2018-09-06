@@ -7,7 +7,7 @@
 /**
  * Import react library
  */
-import React, { Component } from "react";
+import React, {Component} from "react";
 
 /**
  * @class
@@ -16,26 +16,34 @@ import React, { Component } from "react";
  * @extends Component
  */
 class Breadcrumbs extends Component {
-   constructor(props) {
-      super(props);
-   }
-   render() {
-      return (
-         <nav>
-            <div className="nav-wrapper">
-               {/* Currently fixed to full column width */}
-               <div className="col s12">
-                  {this.props.list.map((item, key) => {
-                     return (
-                        <a key={key} href={`${item.link}`} className="breadcrumb">
-                           {item.name}
-                        </a>
-                     );
-                  })}
-               </div>
-            </div>
-         </nav>
-      );
-   }
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        const style = {
+            padding: "0 .75rem"
+        };
+
+        return (
+            <nav>
+                <div className="nav-wrapper">
+                    {/* Currently fixed to full column width */}
+                    <div className="col s12" style={style}>
+                        {this
+                            .props
+                            .list
+                            .map((item, key) => {
+                                return (
+                                    <a key={key} href={`${item.link}`} className="breadcrumb">
+                                        {item.name}
+                                    </a>
+                                );
+                            })}
+                    </div>
+                </div>
+            </nav>
+        );
+    }
 }
 export default Breadcrumbs;
