@@ -79,8 +79,8 @@ class Fab extends Component {
                      <li key={key}>
                         <a
                            className={`btn-floating ${item.color}`}
-                           href={`${item.link ? item.link : ""}`}
-                           onClick={item.onClick ? item.onClick : ""}
+                           href={`${item.link ? item.link : "javascript:void(0)"}`}
+                           onClick={item.onClick ? item.onClick : ()=>{}}
                         >
                            <i className="material-icons">{item.icon}</i>
                         </a>
