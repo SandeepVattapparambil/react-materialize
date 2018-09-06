@@ -32,7 +32,8 @@ class Button extends Component {
                 textColor: config.textColor || "white-text",
                 wavesEffect: config.wavesEffect || true,
                 wavesType: config.wavesType || " ",
-                wavesColor: config.wavesColor || " "
+                wavesColor: config.wavesColor || " ",
+                onClick: config.onClick || " "
             }
         };
         this.availableWavesColors = [
@@ -109,7 +110,9 @@ class Button extends Component {
                 ${btnSize} 
                 ${this.state.options.color} 
                 ${this.state.options.textColor}
-                ${this.state.options.disabled ? 'disabled' : ''}`}>
+                ${this.state.options.disabled ? 'disabled' : ''}`}
+                onClick={this.state.options.onClick}
+                >
                 {this.state.options.type === "floating" ? '': this.state.options.label}
                 {this.props.children}
             </a>
