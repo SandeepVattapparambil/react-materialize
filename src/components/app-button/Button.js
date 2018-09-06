@@ -82,9 +82,13 @@ class Button extends Component {
 
         return (
             <a
-                className={`waves-effect ${this._wavesColorIsValid(this.state.options.wavesColor)
-                ? this.state.options.wavesColor
-                : ''} ${btnType} ${btnSize} ${this.state.options.color} ${this.state.options.textColor}`}>
+                className={`
+                ${this.state.options.wavesEffect ? this.state.options.wavesEffect : ''} 
+                ${this._wavesColorIsValid(this.state.options.wavesColor) ? this.state.options.wavesColor : ''} 
+                ${btnType} 
+                ${btnSize} 
+                ${this.state.options.color} 
+                ${this.state.options.textColor}`}>
                 {this.state.options.label}
                 {this.props.children}
             </a>
