@@ -15,7 +15,7 @@ import React, { Component } from "react";
 import Row from "../app-row/Row";
 import Container from "../app-container/Container";
 import Column from "../app-column/Column";
-
+import FooterSection from "./app-footer-sections/FooterSection";
 /**
  * @class
  * @name Footer
@@ -63,6 +63,7 @@ class Footer extends Component {
                         </li>
                      </ul>
                   </Column> */}
+                  <FooterSection />
                   {this.props.children}
                </Row>
             </Container>
