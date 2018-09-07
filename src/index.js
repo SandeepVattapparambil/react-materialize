@@ -30,6 +30,7 @@ import Icon from "./components/app-icon/Icon";
 import Button from "./components/app-button/Button";
 import Breadcrumbs from "./components/app-breadcrumbs/Breadcrumbs";
 import Fab from "./components/app-floating-action-button/FloatingActionButton";
+import Footer from "./components/app-footer/Footer";
 
 /**
  * Import service worker
@@ -123,6 +124,8 @@ ReactDOM.render(
         </Col>
     </Row>
 </Container>, document.getElementById("container"));
+
+ReactDOM.render(<Footer/>, document.getElementById("footer"));
 
 /**
  * Register service worker
