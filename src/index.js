@@ -31,6 +31,7 @@ import Button from "./components/app-button/Button";
 import Breadcrumbs from "./components/app-breadcrumbs/Breadcrumbs";
 import Fab from "./components/app-floating-action-button/FloatingActionButton";
 import Footer from "./components/app-footer/Footer";
+import FooterSection from "./components/app-footer/app-footer-sections/FooterSection";
 
 /**
  * Import service worker
@@ -46,12 +47,15 @@ ReactDOM.render(
       fixed="true"
       color="grey darken-3"
       textColor="red-text tex-lighten-1"
-      centerLogo="false"
-   >
+      centerLogo="false">
       <NavbarLinks
          align="right"
          list={[
-            { name: "Sass", link: "sass.html", active: true },
+            {
+               name: "Sass",
+               link: "sass.html",
+               active: true
+            },
             {
                name: "Badges",
                link: "badges.html"
@@ -66,8 +70,14 @@ ReactDOM.render(
    <Container>
       <Breadcrumbs
          list={[
-            { name: "First", link: "#!" },
-            { name: "Second", link: "#!" },
+            {
+               name: "First",
+               link: "#!"
+            },
+            {
+               name: "Second",
+               link: "#!"
+            },
             {
                name: "Third",
                link: "#!"
@@ -82,8 +92,7 @@ ReactDOM.render(
             large="l6"
             offset={["s2", "m3", "l1"]}
             push="s1"
-            pull="s3"
-         >
+            pull="s3">
             <Badge type="new" data="1" color="lime" />
             <Divider />
             <Button
@@ -99,8 +108,7 @@ ReactDOM.render(
                href="http://www.sandeepv.in"
                onClick={() => {
                   alert("hello");
-               }}
-            >
+               }}>
                <Icon icon="cloud" align="left" />
             </Button>
             <Fab
@@ -139,42 +147,68 @@ ReactDOM.render(
       subText="You can use rows and columns here to organize your footer content."
       copyrightText="© 2014 Copyright Text"
       moreLinks={[
-         { name: "link1", link: "#!" },
-         { name: "link2", link: "#!" },
-         { name: "link3", link: "#!" },
-         { name: "link4", link: "#!" }
-      ]}
-   >
+         {
+            name: "link1",
+            link: "#!"
+         },
+         {
+            name: "link2",
+            link: "#!"
+         },
+         {
+            name: "link3",
+            link: "#!"
+         },
+         {
+            name: "link4",
+            link: "#!"
+         }
+      ]}>
       <Col large="l6" small="s12">
-         <h5 className="white-text">Footer Content</h5>
-         <p className="grey-text text-lighten-4">
-            You can use rows and columns here to organize your footer content.
-         </p>
+         <FooterSection
+            type="textBlock"
+            data={{
+               title: "Footer Content",
+               titleColor: "white-text",
+               subText:
+                  "You can use rows and columns here to organize your footer content.",
+               subTtextColor: "grey-text text-lighten-4"
+            }}
+         />
       </Col>
       <Col large="l4" small="s12" offset={["l2"]}>
-         <h5 className="white-text">Links</h5>
-         <ul>
-            <li>
-               <a className="grey-text text-lighten-3" href="#!">
-                  Link 1
-               </a>
-            </li>
-            <li>
-               <a className="grey-text text-lighten-3" href="#!">
-                  Link 2
-               </a>
-            </li>
-            <li>
-               <a className="grey-text text-lighten-3" href="#!">
-                  Link 3
-               </a>
-            </li>
-            <li>
-               <a className="grey-text text-lighten-3" href="#!">
-                  Link 4
-               </a>
-            </li>
-         </ul>
+         <FooterSection
+            type="linkBlock"
+            link="Links"
+            linkColor="white-text"
+            data={[
+               {
+                  name: "Link1",
+                  link: "#!",
+                  textColor: "grey-text text-lighten-3"
+               },
+               {
+                  name: "Link2",
+                  link: "#!",
+                  textColor: "grey-text text-lighten-3"
+               },
+               {
+                  name: "Link3",
+                  link: "#!",
+                  textColor: "grey-text text-lighten-3"
+               },
+               {
+                  name: "Link4",
+                  link: "#!",
+                  textColor: "grey-text text-lighten-3"
+               },
+               {
+                  name: "Link5",
+                  link: "#!",
+                  textColor: "grey-text text-lighten-3"
+               }
+            ]}
+         />
       </Col>
    </Footer>,
    document.getElementById("footer")
