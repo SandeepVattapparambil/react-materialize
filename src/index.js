@@ -133,7 +133,22 @@ ReactDOM.render(
     subTextColor="grey-text text-lighten-4"
     mainText="Footer Content"
     subText="You can use rows and columns here to organize your footer content."
-    copyrightText="© 2014 Copyright Text"/>, document.getElementById("footer"));
+    copyrightText="© 2014 Copyright Text"
+    moreLinks={[
+    {
+        name: "link1",
+        link: "#!"
+    }, {
+        name: "link2",
+        link: "#!"
+    }, {
+        name: "link3",
+        link: "#!"
+    }, {
+        name: "link4",
+        link: "#!"
+    }
+]}/>, document.getElementById("footer"));
 
 /**
  * Register service worker
