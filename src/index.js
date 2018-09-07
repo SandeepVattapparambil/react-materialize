@@ -96,12 +96,11 @@ ReactDOM.render(
                 textColor="white-text"
                 wavesEffect={true}
                 wavesType="regular"
-                wavesColor="waves-red" 
+                wavesColor="waves-red"
                 href="http://www.sandeepv.in"
                 onClick={() => {
-                    alert('hello');
-                }}
-                >
+                alert('hello');
+            }}>
                 <Icon icon="cloud" align="left"></Icon>
             </Button>
             <Fab
@@ -110,22 +109,31 @@ ReactDOM.render(
                 large={true}
                 hoverEnabled={true}
                 toolbarEnabled={false}
-                buttons={[{
-                    color: "lime",
-                    icon: "insert_chart",
-                    link: "https://www.google.com"
-                },
+                buttons={[
                 {
                     color: "lime",
                     icon: "insert_chart",
-                    onClick: () => { alert('hello')}
+                    link: "https://www.google.com"
+                }, {
+                    color: "lime",
+                    icon: "insert_chart",
+                    onClick: () => {
+                        alert('hello')
+                    }
                 }
             ]}/>
         </Col>
     </Row>
 </Container>, document.getElementById("container"));
 
-ReactDOM.render(<Footer/>, document.getElementById("footer"));
+ReactDOM.render(
+    <Footer
+    color="lime"
+    textColor="white-text"
+    subTextColor="grey-text text-lighten-4"
+    mainText="Footer Content"
+    subText="You can use rows and columns here to organize your footer content."
+    copyrightText="© 2014 Copyright Text"/>, document.getElementById("footer"));
 
 /**
  * Register service worker
