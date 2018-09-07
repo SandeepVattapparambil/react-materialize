@@ -7,7 +7,7 @@
 /**
  * Import react library
  */
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 /**
  * Import components
@@ -23,49 +23,64 @@ import Column from "../app-column/Column";
  * @extends Component
  */
 class Footer extends Component {
-    constructor(props) {
-        super(props);
-        let config = {
-            ...props
-        };
-        this.state = {
-            options: {
-                color: config.color || " ",
-                mainTextColor: config.textColor || "white-text",
-                subTextColor: config.subTextColor || "grey-text text-lighten-4",
-                mainText: config.mainText || " ",
-                subText: config.subText || " ",
-                copyrightText: config.copyrightText || " "
-            }
-        };
-    }
-    render() {
-        return (
-            <footer className={`page-footer ${this.state.options.color}`}>
-                <Container>
-                    <Row>
-                        <Column large="l6" small="s12">
-                            <h5 className={`${this.state.options.mainTextColor}`}>{this.state.options.mainText}</h5>
-                            <p className={`${this.state.options.subTextColor}`}>{this.state.options.subText}</p>
-                        </Column>
-                        <Column large="l4" small="s12" offset={["l2"]}>
-                            <h5 className={`${this.state.options.mainTextColor}`}>Links</h5>
-                            <ul>
-                                <li>
-                                    <a className={`${this.state.options.subTextColor}`} href="#!">Link 1</a>
-                                </li>
-                            </ul>
-                        </Column>
-                    </Row>
-                </Container>
-                <div className="footer-copyright">
-                    <Container>
-                        {this.state.options.copyrightText}
-                        <a className={`${this.state.options.subTextColor} right`} href="#!">More Links</a>
-                    </Container>
-                </div>
-            </footer>
-        );
-    }
+   constructor(props) {
+      super(props);
+      let config = {
+         ...props
+      };
+      this.state = {
+         options: {
+            color: config.color || " ",
+            mainTextColor: config.textColor || "white-text",
+            subTextColor: config.subTextColor || "grey-text text-lighten-4",
+            mainText: config.mainText || " ",
+            subText: config.subText || " ",
+            copyrightText: config.copyrightText || " ",
+            moreLinks: config.moreLinks || []
+         }
+      };
+   }
+   render() {
+      return (
+         <footer className={`page-footer ${this.state.options.color}`}>
+            <Container>
+               <Row>
+                  <Column large="l6" small="s12">
+                     <h5 className={`${this.state.options.mainTextColor}`}>
+                        {this.state.options.mainText}
+                     </h5>
+                     <p className={`${this.state.options.subTextColor}`}>
+                        {this.state.options.subText}
+                     </p>
+                  </Column>
+                  <Column large="l4" small="s12" offset={["l2"]}>
+                     <h5 className={`${this.state.options.mainTextColor}`}>Links</h5>
+                     <ul>
+                        <li>
+                           <a className={`${this.state.options.subTextColor}`} href="#!">
+                              Link 1
+                           </a>
+                        </li>
+                     </ul>
+                  </Column>
+               </Row>
+            </Container>
+            <div className="footer-copyright">
+               <Container>
+                  {this.state.options.copyrightText}
+                  {this.state.options.moreLinks.map((item, key) => {
+                     return (
+                           <a
+                              key={key}
+                              className={`${this.state.options.subTextColor} right`}
+                              href={`${item.link}`}
+                           >{item.name}&nbsp;</a>
+                     );
+                  })}
+               </Container>
+            </div>
+         </footer>
+      );
+   }
 }
 export default Footer;
