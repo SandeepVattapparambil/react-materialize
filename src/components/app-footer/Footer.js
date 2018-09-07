@@ -15,7 +15,7 @@ import React, { Component } from "react";
 import Row from "../app-row/Row";
 import Container from "../app-container/Container";
 import Column from "../app-column/Column";
-import FooterSection from "./app-footer-sections/FooterSection";
+
 /**
  * @class
  * @name Footer
@@ -45,25 +45,6 @@ class Footer extends Component {
          <footer className={`page-footer ${this.state.options.color}`}>
             <Container>
                <Row>
-                  {/* <Column large="l6" small="s12">
-                     <h5 className={`${this.state.options.mainTextColor}`}>
-                        {this.state.options.mainText}
-                     </h5>
-                     <p className={`${this.state.options.subTextColor}`}>
-                        {this.state.options.subText}
-                     </p>
-                  </Column>
-                  <Column large="l4" small="s12" offset={["l2"]}>
-                     <h5 className={`${this.state.options.mainTextColor}`}>Links</h5>
-                     <ul>
-                        <li>
-                           <a className={`${this.state.options.subTextColor}`} href="#!">
-                              Link 1
-                           </a>
-                        </li>
-                     </ul>
-                  </Column> */}
-                  <FooterSection />
                   {this.props.children}
                </Row>
             </Container>
