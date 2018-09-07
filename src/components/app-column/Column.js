@@ -35,7 +35,7 @@ class Column extends Component {
    }
 
    componentDidMount() {
-      if (this._reactInternalFiber.return.stateNode.className !== "row") {
+      if (this._reactInternalFiber.return.stateNode && this._reactInternalFiber.return.stateNode.className !== "row") {
          console.warn(
             "Remember when you are creating your layout that all columns must be contained in" +
                "side a row component."
