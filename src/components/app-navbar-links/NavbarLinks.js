@@ -47,7 +47,12 @@ class NavbarLinks extends Component {
      * DOM ready event
      */
     componentDidMount() {
-        $(".sidenav").sidenav();
+        /**
+         * Implements MaterializeCSS SideNav component 
+         * @see {@link https://materializecss.com/sidenav.html | SideNav}
+         */
+        let element = document.querySelectorAll('.sidenav');
+        let instances = M.Sidenav.init(element);
     }
     
     /**
