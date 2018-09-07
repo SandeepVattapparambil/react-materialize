@@ -50,7 +50,14 @@ class Column extends Component {
       });
       let offsetString = stringArray.join(" ");
       return (
-         <div className={`col ${this.state.options.small} ${offsetString} ${this.state.options.push} ${this.state.options.pull}`}>
+         <div
+            className={`col ${this.state.options.small} 
+            ${this.state.options.medium} 
+            ${this.state.options.large} 
+            ${offsetString} 
+            ${this.state.options.push} 
+            ${this.state.options.pull}`}
+         >
             {this.props.children}
          </div>
       );
