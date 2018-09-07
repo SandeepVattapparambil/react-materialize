@@ -10,6 +10,13 @@
 import React, {Component} from "react";
 
 /**
+ * Import components
+ */
+import Row from "../app-row/Row";
+import Container from "../app-container/Container";
+import Column from "../app-column/Column";
+
+/**
  * @class
  * @name Footer
  * @description MaterializeCSS Footer Component.
@@ -22,42 +29,40 @@ class Footer extends Component {
             ...props
         };
         this.state = {
-            options: {}
+            options: {
+                color: config.color || " ",
+                mainTextColor: config.textColor || "white-text",
+                subTextColor: config.subTextColor || "grey-text text-lighten-4",
+                mainText: config.mainText || " ",
+                subText: config.subText || " ",
+                copyrightText: config.copyrightText || " "
+            }
         };
     }
     render() {
         return (
-            <footer className="page-footer lime">
-                <div className="container">
-                    <div className="row">
-                        <div className="col l6 s12">
-                            <h5 className="white-text">Footer Content</h5>
-                            <p className="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-                        </div>
-                        <div className="col l4 offset-l2 s12">
-                            <h5 className="white-text">Links</h5>
+            <footer className={`page-footer ${this.state.options.color}`}>
+                <Container>
+                    <Row>
+                        <Column large="l6" small="s12">
+                            <h5 className={`${this.state.options.mainTextColor}`}>{this.state.options.mainText}</h5>
+                            <p className={`${this.state.options.subTextColor}`}>{this.state.options.subText}</p>
+                        </Column>
+                        <Column large="l4" small="s12" offset={["l2"]}>
+                            <h5 className={`${this.state.options.mainTextColor}`}>Links</h5>
                             <ul>
                                 <li>
-                                    <a className="grey-text text-lighten-3" href="#!">Link 1</a>
-                                </li>
-                                <li>
-                                    <a className="grey-text text-lighten-3" href="#!">Link 2</a>
-                                </li>
-                                <li>
-                                    <a className="grey-text text-lighten-3" href="#!">Link 3</a>
-                                </li>
-                                <li>
-                                    <a className="grey-text text-lighten-3" href="#!">Link 4</a>
+                                    <a className={`${this.state.options.subTextColor}`} href="#!">Link 1</a>
                                 </li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
+                        </Column>
+                    </Row>
+                </Container>
                 <div className="footer-copyright">
-                    <div className="container">
-                        © 2014 Copyright Text
-                        <a className="grey-text text-lighten-4 right" href="#!">More Links</a>
-                    </div>
+                    <Container>
+                        {this.state.options.copyrightText}
+                        <a className={`${this.state.options.subTextColor} right`} href="#!">More Links</a>
+                    </Container>
                 </div>
             </footer>
         );
