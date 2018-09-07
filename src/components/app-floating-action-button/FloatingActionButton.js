@@ -61,13 +61,11 @@ class Fab extends Component {
          <div
             className={`fixed-action-btn ${
                this.state.options.toolbarEnabled ? "toolbar" : ""
-            }`}
-         >
+            }`}>
             <a
                className={`btn-floating ${this.state.options.large ? "btn-large" : ""} ${
                   this.state.options.color
-               }`}
-            >
+               }`}>
                <Icon
                   icon={this.state.options.icon}
                   size={this.state.options.large ? "large" : ""}
@@ -80,8 +78,7 @@ class Fab extends Component {
                         <a
                            className={`btn-floating ${item.color}`}
                            href={`${item.link ? item.link : "javascript:void(0)"}`}
-                           onClick={item.onClick ? item.onClick : ()=>{}}
-                        >
+                           onClick={item.onClick ? item.onClick : () => {}}>
                            <i className="material-icons">{item.icon}</i>
                         </a>
                      </li>
