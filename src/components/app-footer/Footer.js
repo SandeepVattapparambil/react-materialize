@@ -45,7 +45,7 @@ class Footer extends Component {
          <footer className={`page-footer ${this.state.options.color}`}>
             <Container>
                <Row>
-                  <Column large="l6" small="s12">
+                  {/* <Column large="l6" small="s12">
                      <h5 className={`${this.state.options.mainTextColor}`}>
                         {this.state.options.mainText}
                      </h5>
@@ -62,7 +62,8 @@ class Footer extends Component {
                            </a>
                         </li>
                      </ul>
-                  </Column>
+                  </Column> */}
+                  {this.props.children}
                </Row>
             </Container>
             <div className="footer-copyright">
