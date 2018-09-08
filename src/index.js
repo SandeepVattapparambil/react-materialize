@@ -32,6 +32,7 @@ import Breadcrumbs from "./components/app-breadcrumbs/Breadcrumbs";
 import Fab from "./components/app-floating-action-button/FloatingActionButton";
 import Footer from "./components/app-footer/Footer";
 import FooterSection from "./components/app-footer/app-footer-sections/FooterSection";
+import Pagination from "./components/app-pagination/Pagination";
 
 /**
  * Import service worker
@@ -132,6 +133,8 @@ ReactDOM.render(
                   }
                ]}
             />
+
+               <Pagination totalItems="10" initialPage="1" maxItems="8"/>
          </Col>
       </Row>
    </Container>,
