@@ -1,5 +1,5 @@
 ignore:
   - "src/vendor"
   - "src/index.js"
-  - "src/ServiceWorker.js"
+  - "src/registerServiceWorker.js"
   - "src/components/index.js"
