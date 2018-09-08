@@ -10,6 +10,11 @@
 import React, { Component } from "react";
 
 /**
+ * Import components
+ */
+import Icon from "../app-icon/Icon";
+
+/**
  * @class
  * @name Pagination
  * @description MaterializeCSS Pagination Component.
@@ -27,9 +32,25 @@ class Pagination extends Component {
             initialPage: config.initialPage || 0,
             maxItems: config.maxItems || 0,
             buttonColor: config.buttonColor || " "
-         }
+         },
+         prevButton: "disabled",
+         nextButton: " ",
+         selected: config.initialPage
       };
    }
+
+   _prev = () => {
+      alert("prev clicked");
+   };
+
+   _next = () => {
+      alert("next clicked");
+   };
+
+   _select = () => {
+      alert("selected");
+   };
+
    render() {
       let buttonArray = [];
       for (let i = 1; i < this.state.options.totalItems; i++) {
@@ -41,21 +62,21 @@ class Pagination extends Component {
                      ? `${this.state.options.buttonColor} active`
                      : ""
                }`}>
-               <a href="#!">{i}</a>
+               <a href="#!" onClick={this._select}>{i}</a>
             </li>
          );
       }
       return (
          <ul className="pagination">
             <li className="disabled">
-               <a href="#!">
-                  <i className="material-icons">chevron_left</i>
+               <a href="#!" onClick={this._prev}>
+                  <Icon icon="chevron_left" />
                </a>
             </li>
             {buttonArray}
             <li className="waves-effect">
-               <a href="#!">
-                  <i className="material-icons">chevron_right</i>
+               <a href="#!" onClick={this._next}>
+                  <Icon icon="chevron_right" />
                </a>
             </li>
          </ul>
