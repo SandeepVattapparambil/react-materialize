@@ -25,18 +25,21 @@ class Pagination extends Component {
          options: {
             totalItems: config.totalItems || 0,
             initialPage: config.initialPage || 0,
-            maxItems: config.maxItems || 0
+            maxItems: config.maxItems || 0,
+            buttonColor: config.buttonColor || " "
          }
       };
    }
    render() {
-      let listArray = [];
+      let buttonArray = [];
       for (let i = 1; i < this.state.options.totalItems; i++) {
-         listArray.push(
+         buttonArray.push(
             <li
                key={i}
                className={`waves-effect ${
-                  i == this.state.options.initialPage ? "active" : ""
+                  i == this.state.options.initialPage
+                     ? `${this.state.options.buttonColor} active`
+                     : ""
                }`}>
                <a href="#!">{i}</a>
             </li>
@@ -49,7 +52,7 @@ class Pagination extends Component {
                   <i className="material-icons">chevron_left</i>
                </a>
             </li>
-            {listArray}
+            {buttonArray}
             <li className="waves-effect">
                <a href="#!">
                   <i className="material-icons">chevron_right</i>

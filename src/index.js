@@ -134,7 +134,7 @@ ReactDOM.render(
                ]}
             />
 
-               <Pagination totalItems="10" initialPage="1" maxItems="8"/>
+               <Pagination totalItems="10" initialPage="1" maxItems="8" buttonColor="lime"/>
          </Col>
       </Row>
    </Container>,
