@@ -14,6 +14,7 @@ import React, { Component } from "react";
  */
 import Row from "../app-row/Row";
 import Column from "../app-column/Column";
+import Icon from "../app-icon/Icon";
 
 /**
  * @class
@@ -48,7 +49,10 @@ class Card extends Component {
             <Column small="12" medium="6">
                <div className={`card ${this.state.options.bgColor}`}>
                   <div className={`card-content ${this.state.options.textColor}`}>
-                     <span className="card-title">{this.state.options.title}</span>
+                     <span className="card-title">
+                        <Icon align="left" icon="menu" />
+                        {this.state.options.title}
+                     </span>
                      <p>{cardContent}</p>
                   </div>
                   {cardAction}
