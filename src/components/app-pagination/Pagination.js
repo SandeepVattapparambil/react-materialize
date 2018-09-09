@@ -41,6 +41,9 @@ class Pagination extends Component {
 
    _prev = () => {
       alert("prev clicked");
+      this.state.options.initialPage == 1
+         ? this.setState({ prevButton: "disabled" })
+         : "";
    };
 
    _next = () => {
@@ -62,7 +65,9 @@ class Pagination extends Component {
                      ? `${this.state.options.buttonColor} active`
                      : ""
                }`}>
-               <a href="#!" onClick={this._select}>{i}</a>
+               <a href="#!" onClick={this._select}>
+                  {i}
+               </a>
             </li>
          );
       }
