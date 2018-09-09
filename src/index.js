@@ -194,7 +194,14 @@ ReactDOM.render(
                   title="Hello Img card"
                   titleColor="white-text"
                   imageUrl="https://picsum.photos/100/100/?random"
-                  fab={{size: "large", color: "lime", icon: "add"}}
+                  fab={{
+                     size: "large",
+                     color: "lime",
+                     icon: "add",
+                     onClick: () => {
+                        alert("Hello");
+                     }
+                  }}
                />
             }>
             I am a very simple card. I am good at containing small bits of information. I
