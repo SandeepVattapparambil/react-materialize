@@ -22,11 +22,23 @@ class CardAction extends Component {
          ...props
       };
       this.state = {
-         options: {}
+         options: {
+            actionList: config.actionList || []
+         }
       };
    }
    render() {
-      return <div className="divider"> </div>;
+      return (
+         <div className="card-action">
+            {this.state.options.actionList.map((item, key) => {
+               return (
+                  <a key={key} href={`${item.link}`} className={`${item.class}`} onClick={item.onClick ? item.onClick : (()=>{})}>
+                     {item.name}
+                  </a>
+               );
+            })}
+         </div>
+      );
    }
 }
 export default CardAction;
