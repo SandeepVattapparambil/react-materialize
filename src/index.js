@@ -154,11 +154,12 @@ ReactDOM.render(
             bgColor="blue-grey darken-1"
             textColor="white-text"
             title="Hello"
-            size={{
+            column={{
                small: "s12",
                medium: "m6",
                large: "l8"
             }}
+            
             cardAction={
                <CardAction
                   actionList={[
