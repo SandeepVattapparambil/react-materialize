@@ -12,6 +12,7 @@ import React, { Component } from "react";
 /**
  * Import components
  */
+import Button from "../../app-button/Button";
 import Icon from "../../app-icon/Icon";
 
 /**
@@ -28,20 +29,26 @@ class CardImage extends Component {
       };
       this.state = {
          options: {
-             title: config.title || " ",
-             titleColor: config.titleColor || " ",
-             imageUrl: config.imageUrl || " "
+            title: config.title || " ",
+            titleColor: config.titleColor || " ",
+            imageUrl: config.imageUrl || " ",
+            fab: config.fab || {}
          }
       };
    }
    render() {
       return (
          <div className="card-image">
-            <img src={this.state.options.imageUrl}/>
-            <span className={`card-title ${this.state.options.titleColor}`}>{this.state.options.title}</span>
-            <a className="btn-floating halfway-fab waves-effect waves-light red">
+            <img src={this.state.options.imageUrl} />
+            <span className={`card-title ${this.state.options.titleColor}`}>
+               {this.state.options.title}
+            </span>
+            <Button
+               type="floating"
+               size={this.state.options.fab.size}
+               color={`${this.state.options.fab.color} halfway-fab`}>
                <Icon icon="add" />
-            </a>
+            </Button>
          </div>
       );
    }

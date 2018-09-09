@@ -32,6 +32,7 @@ class Card extends Component {
             textColor: config.textColor || " ",
             title: config.title || " ",
             size: config.size || {},
+            cardImage: config.cardImage || null,
             cardAction: config.cardAction || null,
             cardReveal: config.cardReveal || null
          }
@@ -47,14 +48,7 @@ class Card extends Component {
                medium={this.state.options.size.medium}
                large={this.state.options.size.large}>
                <div className={`card ${this.state.options.bgColor}`}>
-                  <div className="card-image">
-                     <img src="https://picsum.photos/100/100/?random" />
-                     <span className="card-title">{this.state.options.title}</span>
-                     <a className="btn-floating halfway-fab waves-effect waves-light red">
-                        <Icon icon="add" />
-                     </a>
-                  </div>
-
+                 {this.state.options.cardImage}
                   <div className={`card-content ${this.state.options.textColor}`}>
                      <span className="card-title activator">
                         <Icon align="left" icon="menu" />
