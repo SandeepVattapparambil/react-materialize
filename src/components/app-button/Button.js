@@ -32,7 +32,7 @@ class Button extends Component {
             wavesEffect: config.wavesEffect || true,
             wavesType: config.wavesType || " ",
             wavesColor: config.wavesColor || " ",
-            href: config.href || " ",
+            href: config.href,
             onClick: config.onClick || (() => {})()
          }
       };
