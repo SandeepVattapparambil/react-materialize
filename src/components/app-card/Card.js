@@ -31,22 +31,15 @@ class Card extends Component {
             bgColor: config.bgColor || " ",
             textColor: config.textColor || " ",
             title: config.title || " ",
-            size: config.size || {}
+            size: config.size || {},
+            cardAction: config.cardAction || null,
+            cardReveal: config.cardReveal || null
          }
       };
    }
 
    render() {
-      let cardContent;
-      let cardAction;
-      let cardReveal;
-      if (typeof this.props.children === "string") {
-         cardContent = this.props.children;
-      } else {
-         cardContent = this.props.children[0];
-         cardAction = this.props.children[1];
-         cardReveal = this.props.children[2];
-      }
+      let cardContent = this.props.children;
       return (
          <Row>
             <Column
@@ -56,9 +49,7 @@ class Card extends Component {
                <div className={`card ${this.state.options.bgColor}`}>
                   <div className="card-image">
                      <img src="https://picsum.photos/100/100/?random" />
-                     <span className="card-title">
-                        {this.state.options.title}
-                     </span>
+                     <span className="card-title">{this.state.options.title}</span>
                      <a className="btn-floating halfway-fab waves-effect waves-light red">
                         <Icon icon="add" />
                      </a>
@@ -72,8 +63,8 @@ class Card extends Component {
                      </span>
                      <p>{cardContent}</p>
                   </div>
-                  {cardAction}
-                  {cardReveal}
+                  {this.state.options.cardAction}
+                  {this.state.options.cardReveal}
                </div>
             </Column>
          </Row>
