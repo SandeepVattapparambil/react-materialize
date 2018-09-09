@@ -31,7 +31,8 @@ class Card extends Component {
             bgColor: config.bgColor || " ",
             textColor: config.textColor || " ",
             title: config.title || " ",
-            size: config.size || {},
+            size: config.size,
+            column: config.column || {},
             cardImage: config.cardImage || null,
             cardAction: config.cardAction || null,
             cardActionSticky: config.cardActionSticky || false,
@@ -45,11 +46,11 @@ class Card extends Component {
       return (
          <Row>
             <Column
-               small={this.state.options.size.small}
-               medium={this.state.options.size.medium}
-               large={this.state.options.size.large}>
+               small={this.state.options.column.small}
+               medium={this.state.options.column.medium}
+               large={this.state.options.column.large}>
                <div
-                  className={`card ${this.state.options.bgColor} ${
+                  className={`card ${this.state.options.size} ${this.state.options.bgColor} ${
                      this.state.options.cardActionSticky ? "sticky-action" : ""
                   }`}>
                   {this.state.options.cardImage}
