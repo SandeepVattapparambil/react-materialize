@@ -36,10 +36,12 @@ class Card extends Component {
 
    render() {
       let cardContent;
+      let cardAction;
       if (typeof this.props.children === "string") {
          cardContent = this.props.children;
       } else {
          cardContent = this.props.children[0];
+         cardAction = this.props.children[1];
       }
       return (
          <Row>
@@ -49,10 +51,7 @@ class Card extends Component {
                      <span className="card-title">{this.state.options.title}</span>
                      <p>{cardContent}</p>
                   </div>
-                  <div className="card-action">
-                     <a href="#">This is a link</a>
-                     <a href="#">This is a link</a>
-                  </div>
+                  {cardAction}
                </div>
             </Column>
          </Row>
