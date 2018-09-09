@@ -34,6 +34,7 @@ import Footer from "./components/app-footer/Footer";
 import FooterSection from "./components/app-footer/app-footer-sections/FooterSection";
 import Preloader from "./components/app-preloader/Preloader";
 import Card from "./components/app-card/Card";
+import CardAction from "./components/app-card/app-card-action/CardAction";
 
 /**
  * Import service worker
@@ -150,7 +151,13 @@ ReactDOM.render(
          <Card bgColor="blue-grey darken-1" textColor="white-text" title="Hello">
             I am a very simple card. I am good at containing small bits of information. I
             am convenient because I require little markup to use effectively.
-            
+            <CardAction
+               actionList={[
+                  { name: "Link1", link: "#!", class: "", onClick: (()=>{alert('hello')}) },
+                  { name: "Link2", link: "#!", class: "" },
+                  { name: "Link3", link: "#!", class: "waves-effect lime white-text btn" }
+               ]}
+            />
          </Card>
       </Row>
    </Container>,
