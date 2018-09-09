@@ -33,6 +33,7 @@ import Fab from "./components/app-floating-action-button/FloatingActionButton";
 import Footer from "./components/app-footer/Footer";
 import FooterSection from "./components/app-footer/app-footer-sections/FooterSection";
 import Preloader from "./components/app-preloader/Preloader";
+import Card from "./components/app-card/Card";
 
 /**
  * Import service worker
@@ -139,8 +140,10 @@ ReactDOM.render(
             <Preloader type="circular" size="big"/>
 
             <Preloader type="flashing" />
-
+               
          </Col>
+
+          <Card/>
       </Row>
    </Container>,
    document.getElementById("container")
