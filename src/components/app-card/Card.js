@@ -10,30 +10,52 @@
 import React, { Component } from "react";
 
 /**
+ * Import components
+ */
+import Row from "../app-row/Row";
+import Column from "../app-column/Column";
+
+/**
  * @class
  * @name Card
  * @description MaterializeCSS Card Component.
  * @extends Component
  */
 class Card extends Component {
+   constructor(props) {
+      super(props);
+      let config = { ...props };
+      this.state = {
+         options: {
+            bgColor: config.bgColor || " ",
+            textColor: config.textColor || " ",
+            title: config.title || " "
+         }
+      };
+   }
+
    render() {
+      let cardContent;
+      if (typeof this.props.children === "string") {
+         cardContent = this.props.children;
+      } else {
+         cardContent = this.props.children[0];
+      }
       return (
-         <div className="col s12 m6">
-            <div className="card blue-grey darken-1">
-               <div className="card-content white-text">
-                  <span className="card-title">Card Title</span>
-                  <p>
-                     I am a very simple card. I am good at containing small bits of
-                     information. I am convenient because I require little markup to use
-                     effectively.
-                  </p>
+         <Row>
+            <Column small="12" medium="6">
+               <div className={`card ${this.state.options.bgColor}`}>
+                  <div className={`card-content ${this.state.options.textColor}`}>
+                     <span className="card-title">{this.state.options.title}</span>
+                     <p>{cardContent}</p>
+                  </div>
+                  <div className="card-action">
+                     <a href="#">This is a link</a>
+                     <a href="#">This is a link</a>
+                  </div>
                </div>
-               <div className="card-action">
-                  <a href="#">This is a link</a>
-                  <a href="#">This is a link</a>
-               </div>
-            </div>
-         </div>
+            </Column>
+         </Row>
       );
    }
 }
