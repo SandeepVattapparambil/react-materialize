@@ -46,7 +46,8 @@ class CardImage extends Component {
             <Button
                type="floating"
                size={this.state.options.fab.size}
-               color={`${this.state.options.fab.color} halfway-fab`}>
+               color={`${this.state.options.fab.color} halfway-fab`}
+               onClick={this.state.options.fab.onClick}>
                <Icon icon="add" />
             </Button>
          </div>
