@@ -30,32 +30,41 @@ class Card extends Component {
          options: {
             bgColor: config.bgColor || " ",
             textColor: config.textColor || " ",
-            title: config.title || " "
+            title: config.title || " ",
+            size: config.size || {},
+            cardAction: config.cardAction || null,
+            cardReveal: config.cardReveal || null
          }
       };
    }
 
    render() {
-      let cardContent;
-      let cardAction;
-      if (typeof this.props.children === "string") {
-         cardContent = this.props.children;
-      } else {
-         cardContent = this.props.children[0];
-         cardAction = this.props.children[1];
-      }
+      let cardContent = this.props.children;
       return (
          <Row>
-            <Column small="12" medium="6">
+            <Column
+               small={this.state.options.size.small}
+               medium={this.state.options.size.medium}
+               large={this.state.options.size.large}>
                <div className={`card ${this.state.options.bgColor}`}>
+                  <div className="card-image">
+                     <img src="https://picsum.photos/100/100/?random" />
+                     <span className="card-title">{this.state.options.title}</span>
+                     <a className="btn-floating halfway-fab waves-effect waves-light red">
+                        <Icon icon="add" />
+                     </a>
+                  </div>
+
                   <div className={`card-content ${this.state.options.textColor}`}>
-                     <span className="card-title">
+                     <span className="card-title activator">
                         <Icon align="left" icon="menu" />
                         {this.state.options.title}
+                        <Icon align="right" icon="more_vert" />
                      </span>
                      <p>{cardContent}</p>
                   </div>
-                  {cardAction}
+                  {this.state.options.cardAction}
+                  {this.state.options.cardReveal}
                </div>
             </Column>
          </Row>

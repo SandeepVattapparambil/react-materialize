@@ -35,6 +35,8 @@ import FooterSection from "./components/app-footer/app-footer-sections/FooterSec
 import Preloader from "./components/app-preloader/Preloader";
 import Card from "./components/app-card/Card";
 import CardAction from "./components/app-card/app-card-action/CardAction";
+import CardReveal from "./components/app-card/app-card-reveal/CardReveal";
+import CardImage from "./components/app-card/app-card-image/CardImage";
 
 /**
  * Import service worker
@@ -148,16 +150,54 @@ ReactDOM.render(
             <Preloader type="flashing" />
          </Col>
 
-         <Card bgColor="blue-grey darken-1" textColor="white-text" title="Hello">
+         <Card
+            bgColor="blue-grey darken-1"
+            textColor="white-text"
+            title="Hello"
+            size={{
+               small: "s12",
+               medium: "m6",
+               large: "l8"
+            }}
+            cardAction={
+               <CardAction
+                  actionList={[
+                     {
+                        name: "Link1",
+                        link: "#!",
+                        class: "",
+                        onClick: () => {
+                           alert("hello");
+                        }
+                     },
+                     {
+                        name: "Link2",
+                        link: "#!",
+                        class: ""
+                     },
+                     {
+                        name: "Link3",
+                        link: "#!",
+                        class: "waves-effect lime white-text btn"
+                     }
+                  ]}
+               />
+            }
+            cardReveal={
+               <CardReveal title="Hello reveal" titleColor="red-text">
+                  Here is some more information about this product that is only revealed
+                  once clicked on.
+               </CardReveal>
+            }
+            cardImage={
+               <CardImage
+                  title="Hello Img card"
+                  titleColor="white-text"
+                  imageUrl="https://picsum.photos/100/100/?random"
+               />
+            }>
             I am a very simple card. I am good at containing small bits of information. I
             am convenient because I require little markup to use effectively.
-            <CardAction
-               actionList={[
-                  { name: "Link1", link: "#!", class: "", onClick: (()=>{alert('hello')}) },
-                  { name: "Link2", link: "#!", class: "" },
-                  { name: "Link3", link: "#!", class: "waves-effect lime white-text btn" }
-               ]}
-            />
          </Card>
       </Row>
    </Container>,
