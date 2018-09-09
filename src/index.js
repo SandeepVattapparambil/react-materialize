@@ -133,7 +133,13 @@ ReactDOM.render(
                   }
                ]}
             />
-            <Preloader/>
+            <Preloader type="linear" val={60} barColor="lime" barBgColor="lime lighten-3"/>
+            <Preloader type="linear" barColor="red" barBgColor="red lighten-3"/>
+
+            <Preloader type="circular" size="big"/>
+
+            <Preloader type="flashing" />
+
          </Col>
       </Row>
    </Container>,
