@@ -183,6 +183,7 @@ ReactDOM.render(
                   ]}
                />
             }
+            cardActionSticky={true}
             cardReveal={
                <CardReveal title="Hello reveal" titleColor="red-text">
                   Here is some more information about this product that is only revealed
