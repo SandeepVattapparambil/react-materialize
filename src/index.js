@@ -134,16 +134,24 @@ ReactDOM.render(
                   }
                ]}
             />
-            <Preloader type="linear" val={60} barColor="lime" barBgColor="lime lighten-3"/>
-            <Preloader type="linear" barColor="red" barBgColor="red lighten-3"/>
+            <Preloader
+               type="linear"
+               val={60}
+               barColor="lime"
+               barBgColor="lime lighten-3"
+            />
+            <Preloader type="linear" barColor="red" barBgColor="red lighten-3" />
 
-            <Preloader type="circular" size="big"/>
+            <Preloader type="circular" size="big" />
 
             <Preloader type="flashing" />
-               
          </Col>
 
-          <Card/>
+         <Card bgColor="blue-grey darken-1" textColor="white-text" title="Hello">
+            I am a very simple card. I am good at containing small bits of information. I
+            am convenient because I require little markup to use effectively.
+            
+         </Card>
       </Row>
    </Container>,
    document.getElementById("container")
