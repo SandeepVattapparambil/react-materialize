@@ -34,6 +34,7 @@ class Fab extends Component {
             direction: config.direction || "top",
             hoverEnabled: config.hoverEnabled || false,
             toolbarEnabled: config.toolbarEnabled || false,
+            pulse: config.pulse || false,
             buttons: config.buttons || []
          }
       };
@@ -65,7 +66,7 @@ class Fab extends Component {
             <a
                className={`btn-floating ${this.state.options.large ? "btn-large" : ""} ${
                   this.state.options.color
-               }`}>
+               } ${this.state.options.pulse ? 'pulse' : ''}`}>
                <Icon
                   icon={this.state.options.icon}
                   size={this.state.options.large ? "large" : ""}
