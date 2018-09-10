@@ -32,7 +32,7 @@ class CardImage extends Component {
             title: config.title || " ",
             titleColor: config.titleColor || " ",
             imageUrl: config.imageUrl || " ",
-            fab: config.fab || {}
+            fab: config.fab || null
          }
       };
    }
@@ -43,13 +43,17 @@ class CardImage extends Component {
             <span className={`card-title ${this.state.options.titleColor}`}>
                {this.state.options.title}
             </span>
-            <Button
-               type="floating"
-               size={this.state.options.fab.size}
-               color={`${this.state.options.fab.color} halfway-fab`}
-               onClick={this.state.options.fab.onClick}>
-               <Icon icon="add" />
-            </Button>
+            {this.state.options.fab ? (
+               <Button
+                  type="floating"
+                  size={this.state.options.fab.size}
+                  color={`${this.state.options.fab.color} halfway-fab`}
+                  onClick={this.state.options.fab.onClick}>
+                  <Icon icon="add" />
+               </Button>
+            ) : (
+               ""
+            )}
          </div>
       );
    }
