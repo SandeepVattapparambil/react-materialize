@@ -118,6 +118,20 @@ ReactDOM.render(
                }}>
                <Icon icon="cloud" align="left" />
             </Button>
+            <br />
+            <Button
+               type="floating"
+               size="large"
+               disabled={false}
+               color="blue"
+               textColor="white-text"
+               wavesEffect={true}
+               wavesType="regular"
+               wavesColor="waves-red"
+               pulse={true}>
+               <Icon icon="edit" />
+            </Button>
+            <br />
             <Fab
                color="lime"
                icon="mode_edit"
