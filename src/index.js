@@ -39,6 +39,7 @@ import Breadcrumbs from "./components/app-breadcrumbs/Breadcrumbs";
 import Badge from "./components/app-badge/Badge";
 import Divider from "./components/app-divider/Divider";
 import Icon from "./components/app-icon/Icon";
+import Collections from "./components/app-collection/Collection";
 
 /**
  * Buttons
@@ -318,7 +319,9 @@ ReactDOM.render(
                I am convenient because I require little markup to use effectively.
             </p>
          </CardTabs>
-         
+
+        <Collections header={{text: "Header", textColor: "black-text", bgColor: "lime"}} />
+
       </Row>
    </Container>,
    document.getElementById("container")
