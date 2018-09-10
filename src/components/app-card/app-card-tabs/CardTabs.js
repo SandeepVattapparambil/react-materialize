@@ -23,15 +23,25 @@ class CardTabs extends Component {
          options: {}
       };
    }
+
+   /**
+    * DOM ready event
+    */
+   componentDidMount() {
+      let element = document.querySelectorAll(".tabs");
+      let options = {
+         duration: 300,
+         onShow: () => {},
+         swipeable: false,
+         responsiveThreshold: Infinity
+      };
+      let instance = M.Tabs.init(element, options);
+   }
    render() {
       return (
          <div className="card">
             <div className="card-content">
-               <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup to use
-                  effectively.
-               </p>
+               {this.props.children}
             </div>
             <div className="card-tabs">
                <ul className="tabs tabs-fixed-width">
