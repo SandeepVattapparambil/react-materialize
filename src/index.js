@@ -35,6 +35,7 @@ import FooterSection from "./components/app-footer/app-footer-sections/FooterSec
 import Preloader from "./components/app-preloader/Preloader";
 import Card from "./components/app-card/Card";
 import CardPanel from "./components/app-card/app-card-panel/CardPanel";
+import CardHorizontal from "./components/app-card/app-card-horizontal/CardHorizontal";
 import CardAction from "./components/app-card/app-card-action/CardAction";
 import CardReveal from "./components/app-card/app-card-reveal/CardReveal";
 import CardImage from "./components/app-card/app-card-image/CardImage";
@@ -247,12 +248,37 @@ ReactDOM.render(
             am convenient because I require little markup to use effectively.
          </Card>
 
-         <CardPanel column={{small: "s12", medium:"m5"}} panelColor="teal">
+         <CardPanel column={{ small: "s12", medium: "m5" }} panelColor="teal">
             I am a very simple card. I am good at containing small bits of information. I
             am convenient because I require little markup to use effectively. I am similar
             to what is called a panel in other frameworks.
          </CardPanel>
 
+         <CardHorizontal
+            column={{
+               small: "s12",
+               medium: "m7",
+            }}
+            color="white"
+            cardAction={
+               <CardAction
+                  actionList={[
+                     {
+                        name: "Link1",
+                        link: "#!",
+                        class: "",
+                        onClick: () => {
+                           alert("hello");
+                        }
+                     }
+                  ]}
+               />
+            }
+            imageUrl="https://lorempixel.com/100/190/nature/6">
+            <p>
+               I am a very simple card. I am good at containing small bits of information.
+            </p>
+         </CardHorizontal>
       </Row>
    </Container>,
    document.getElementById("container")
