@@ -32,6 +32,7 @@ class Button extends Component {
             wavesEffect: config.wavesEffect || true,
             wavesType: config.wavesType || " ",
             wavesColor: config.wavesColor || " ",
+            pulse: config.pulse || false,
             href: config.href,
             onClick: config.onClick || (() => {})()
          }
@@ -120,7 +121,8 @@ class Button extends Component {
                 ${btnSize} 
                 ${this.state.options.color} 
                 ${this.state.options.textColor}
-                ${this.state.options.disabled ? "disabled" : ""}`}
+                ${this.state.options.disabled ? "disabled" : ""}
+                ${(this.state.options.type === "floating") && this.state.options.pulse ? "pulse" : ""}`}
             href={`${
                this.state.options.href ? this.state.options.href : "javascript:void(0)"
             }`}
