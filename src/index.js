@@ -34,6 +34,7 @@ import Footer from "./components/app-footer/Footer";
 import FooterSection from "./components/app-footer/app-footer-sections/FooterSection";
 import Preloader from "./components/app-preloader/Preloader";
 import Card from "./components/app-card/Card";
+import CardPanel from "./components/app-card/app-card-panel/CardPanel";
 import CardAction from "./components/app-card/app-card-action/CardAction";
 import CardReveal from "./components/app-card/app-card-reveal/CardReveal";
 import CardImage from "./components/app-card/app-card-image/CardImage";
@@ -245,6 +246,13 @@ ReactDOM.render(
             I am a very simple card. I am good at containing small bits of information. I
             am convenient because I require little markup to use effectively.
          </Card>
+
+         <CardPanel column={{small: "s12", medium:"m5"}} panelColor="teal">
+            I am a very simple card. I am good at containing small bits of information. I
+            am convenient because I require little markup to use effectively. I am similar
+            to what is called a panel in other frameworks.
+         </CardPanel>
+
       </Row>
    </Container>,
    document.getElementById("container")
