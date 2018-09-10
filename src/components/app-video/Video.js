@@ -16,18 +16,38 @@ import React, { Component } from "react";
  * @extends Component
  */
 class Video extends Component {
+   constructor(props) {
+      super(props);
+      let config = { ...props };
+      this.state = {
+         options: {
+            input: config.input
+         }
+      };
+   }
    render() {
-      return (
-         <div className="video-container">
-            <iframe
-               width="853"
-               height="480"
-               src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0"
-               frameborder="0"
-               allowfullscreen
-            />
-         </div>
-      );
+      if (this.state.options.input.type === "embed") {
+         return (
+            <div className="video-container">
+               <iframe
+                  width={this.state.options.input.width}
+                  height={this.state.options.input.height}
+                  src={this.state.options.input.src}
+                  frameBorder="0"
+                  allowFullScreen
+               />
+            </div>
+         );
+      } else if (this.state.options.input.type === "video") {
+         return (
+            <video className="responsive-video" controls>
+               <source
+                  src={this.state.options.input.src}
+                  type={this.state.options.input.format}
+               />
+            </video>
+         );
+      }
    }
 }
 export default Video;
