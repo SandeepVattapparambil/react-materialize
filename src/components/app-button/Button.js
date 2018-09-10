@@ -53,9 +53,11 @@ class Button extends Component {
    _wavesColorIsValid = color => {
       if (this.availableWavesColors.includes(color)) {
          return true;
+      } else if(!color || color == null || color == undefined || color === " "){
+            return false;
       } else {
          console.warn(
-            "ReactMaterial Warning: Button attr - wavesColor is empty or invalid"
+            "ReactMaterial Warning: Button attr - wavesColor is invalid"
          );
          return false;
       }
@@ -64,6 +66,8 @@ class Button extends Component {
    _sizeIsValid = size => {
       if (this.availableSizes.includes(size)) {
          return true;
+      } else if(!size || size == null || size == undefined || size === " "){
+            return false;
       } else {
          console.warn(
             "ReactMaterial Error: Button attr - size is empty or invalid \n Component will re" +
@@ -76,6 +80,8 @@ class Button extends Component {
    _typeIsInvalid = type => {
       if (this.availableTypes.includes(type)) {
          return true;
+      } else if(!type || type == null || type == undefined || type === " "){
+            return false;
       } else {
          console.warn(
             "ReactMaterial Error: Button attr - type is empty or invalid \n Component will re" +
