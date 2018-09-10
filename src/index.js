@@ -289,7 +289,7 @@ ReactDOM.render(
          <CardHorizontal
             column={{
                small: "s12",
-               medium: "m7",
+               medium: "m7"
             }}
             color="white"
             cardAction={
@@ -311,6 +311,14 @@ ReactDOM.render(
                I am a very simple card. I am good at containing small bits of information.
             </p>
          </CardHorizontal>
+
+         <CardTabs>
+            <p>
+               I am a very simple card. I am good at containing small bits of information.
+               I am convenient because I require little markup to use effectively.
+            </p>
+         </CardTabs>
+         
       </Row>
    </Container>,
    document.getElementById("container")
