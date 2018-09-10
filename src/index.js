@@ -19,26 +19,58 @@ import "./index.css";
 /**
  * Import components
  */
-import Navbar from "./components/app-navbar/Navbar";
-import NavbarLinks from "./components/app-navbar-links/NavbarLinks";
+/**
+ * Grid
+ */
 import Row from "./components/app-row/Row";
 import Container from "./components/app-container/Container";
-import Badge from "./components/app-badge/Badge";
 import Col from "./components/app-column/Column";
+
+/**
+ * Navigation
+ */
+import Navbar from "./components/app-navbar/Navbar";
+import NavbarLinks from "./components/app-navbar-links/NavbarLinks";
+import Breadcrumbs from "./components/app-breadcrumbs/Breadcrumbs";
+
+/**
+ * Static
+ */
+import Badge from "./components/app-badge/Badge";
 import Divider from "./components/app-divider/Divider";
 import Icon from "./components/app-icon/Icon";
+
+/**
+ * Buttons
+ */
 import Button from "./components/app-button/Button";
-import Breadcrumbs from "./components/app-breadcrumbs/Breadcrumbs";
 import Fab from "./components/app-floating-action-button/FloatingActionButton";
+
+/**
+ * Footer
+ */
 import Footer from "./components/app-footer/Footer";
 import FooterSection from "./components/app-footer/app-footer-sections/FooterSection";
+
+/**
+ * Loader
+ */
 import Preloader from "./components/app-preloader/Preloader";
+
+/**
+ * Cards
+ */
 import Card from "./components/app-card/Card";
 import CardPanel from "./components/app-card/app-card-panel/CardPanel";
 import CardHorizontal from "./components/app-card/app-card-horizontal/CardHorizontal";
 import CardAction from "./components/app-card/app-card-action/CardAction";
 import CardReveal from "./components/app-card/app-card-reveal/CardReveal";
 import CardImage from "./components/app-card/app-card-image/CardImage";
+import CardTabs from "./components/app-card/app-card-tabs/CardTabs";
+
+/**
+ * Media
+ */
 import Image from "./components/app-image/Image";
 import Video from "./components/app-video/Video";
 
