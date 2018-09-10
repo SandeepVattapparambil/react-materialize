@@ -138,6 +138,7 @@ ReactDOM.render(
                large={true}
                hoverEnabled={true}
                toolbarEnabled={false}
+               pulse={true}
                buttons={[
                   {
                      color: "lime",
