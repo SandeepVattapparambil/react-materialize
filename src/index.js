@@ -37,6 +37,7 @@ import Card from "./components/app-card/Card";
 import CardAction from "./components/app-card/app-card-action/CardAction";
 import CardReveal from "./components/app-card/app-card-reveal/CardReveal";
 import CardImage from "./components/app-card/app-card-image/CardImage";
+import Image from "./components/app-image/Image";
 
 /**
  * Import service worker
@@ -137,6 +138,9 @@ ReactDOM.render(
                   }
                ]}
             />
+
+            <Image src="https://picsum.photos/100/100/?random" alt="test" circle={true} />
+
             <Preloader
                type="linear"
                val={60}
@@ -159,7 +163,6 @@ ReactDOM.render(
                medium: "m6",
                large: "l8"
             }}
-            
             cardAction={
                <CardAction
                   actionList={[
