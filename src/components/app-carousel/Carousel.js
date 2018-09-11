@@ -15,7 +15,6 @@ import React, { Component } from "react";
  * @description MaterializeCSS Carousel Row.
  * @extends Component
  */
-
 class Carousel extends Component {
    constructor(props) {
       super(props);
@@ -89,7 +88,9 @@ class Carousel extends Component {
     * @memberof Carousel
     * @param {Number} i - Index of slide.
     */
-   _set = i => {};
+   _set = i => {
+       this.instance.set(i);
+   };
 
    /**
     * @function
@@ -98,7 +99,9 @@ class Carousel extends Component {
     * @name _destroy
     * @memberof Carousel
     */
-   _destroy = () => {};
+   _destroy = () => {
+       this.instance.destroy();
+   };
 
    /**
     * A helper function to get options the instance was initialized with.
