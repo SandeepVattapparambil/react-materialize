@@ -39,9 +39,14 @@ import Breadcrumbs from "./components/app-breadcrumbs/Breadcrumbs";
 import Badge from "./components/app-badge/Badge";
 import Divider from "./components/app-divider/Divider";
 import Icon from "./components/app-icon/Icon";
+
+/**
+ * Collections
+ */
 import Collections from "./components/app-collection/Collection";
 import CollectionBasic from "./components/app-collection/app-collection-basic/CollectionBasic";
 import CollectionSecondary from "./components/app-collection/app-collection-secondary/CollectionSecondary";
+import CollectionAvatar from "./components/app-collection/app-collection-avatar/CollectionAvatar";
 
 /**
  * Buttons
@@ -339,7 +344,43 @@ ReactDOM.render(
                      iconColor: "lime-text",
                      textColor: "black-text",
                      bgColor: "white",
-                     onClick: (()=>{alert('Hello')})
+                     onClick: () => {
+                        alert("Hello");
+                     }
+                  }
+               ]}
+            />
+
+            <CollectionAvatar
+               collectionData={[
+                  {
+                     title: "title",
+                     firstLine: "First Line",
+                     secondLine: "Second Line",
+                     textColor: "black-text",
+                     icon: "grade",
+                     iconColor: "lime-text",
+                     href: "#!",
+                     avatar: {
+                        type: "image",
+                        imageSrc: "https://materializecss.com/images/yuna.jpg",
+                        alt: "me"
+                     },
+                     onClick: (() => {alert('hello')})
+                  },
+                  {
+                     title: "title",
+                     firstLine: "First Line",
+                     secondLine: "Second Line",
+                     textColor: "black-text",
+                     icon: "grade",
+                     iconColor: "lime-text",
+                     href: "#!",
+                     avatar: {
+                        type: "icon",
+                        icon: "menu",
+                        color: "red"
+                     }
                   }
                ]}
             />
