@@ -401,6 +401,17 @@ ReactDOM.render(
                "https://placeimg.com/640/480/any"
             ]}
          />
+
+         <Carousel
+         type="carousel-slider"
+            textData={[
+               "https://placeimg.com/640/480/any",
+               "https://placeimg.com/640/480/any",
+               "https://placeimg.com/640/480/any"
+            ]}
+         />
+
+
       </Row>
    </Container>,
    document.getElementById("container")
