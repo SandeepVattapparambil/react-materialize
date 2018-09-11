@@ -25,7 +25,8 @@ class Carousel extends Component {
          options: {
             type: config.type || " ",
             carouselOptions: config.carouselOptions || {},
-            imageData: config.imageData || []
+            imageData: config.imageData || [],
+            textData: config.textData || []
          }
       };
       this.element;
