@@ -22,7 +22,7 @@ class CarouselText extends Component {
    render() {
       return (
          <Fragement>
-            {this.props.imageData.map((item, key) => {
+            {this.props.textData.map((item, key) => {
                return (
                   <div
                      key={key}
