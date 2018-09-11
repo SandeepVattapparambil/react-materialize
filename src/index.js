@@ -40,6 +40,7 @@ import Badge from "./components/app-badge/Badge";
 import Divider from "./components/app-divider/Divider";
 import Icon from "./components/app-icon/Icon";
 import Collections from "./components/app-collection/Collection";
+import CollectionBasic from "./components/app-collection/app-collection-basic/CollectionBasic";
 
 /**
  * Buttons
@@ -320,8 +321,14 @@ ReactDOM.render(
             </p>
          </CardTabs>
 
-        <Collections header={{text: "Header", textColor: "black-text", bgColor: "lime"}} />
-
+         <Collections
+            header={{ text: "Header", textColor: "black-text", bgColor: "lime" }}>
+            <CollectionBasic
+               collectionData={[
+                  { data: "Alvin", textColor: "black-text", bgColor: "white" }
+               ]}
+            />
+         </Collections>
       </Row>
    </Container>,
    document.getElementById("container")
