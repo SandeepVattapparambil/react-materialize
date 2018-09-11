@@ -36,8 +36,8 @@ class Collection extends Component {
             ) : (
                ""
             )}
-
-            <li className="collection-item">Alvin</li>
+            {this.props.children}
+            {/* <li className="collection-item">Alvin</li>
             <li className="collection-item">
                <div>
                   Alvin
@@ -72,7 +72,7 @@ class Collection extends Component {
                <a href="#!" className="secondary-content">
                   <i className="material-icons">grade</i>
                </a>
-            </li>
+            </li> */}
          </ul>
       );
    }
