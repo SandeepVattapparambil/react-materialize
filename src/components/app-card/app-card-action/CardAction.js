@@ -32,7 +32,11 @@ class CardAction extends Component {
          <div className="card-action">
             {this.state.options.actionList.map((item, key) => {
                return (
-                  <a key={key} href={`${item.link}`} className={`${item.class}`} onClick={item.onClick ? item.onClick : (()=>{})}>
+                  <a
+                     key={key}
+                     href={`${item.link}`}
+                     className={`${item.class}`}
+                     onClick={item.onClick ? item.onClick : () => {}}>
                      {item.name}
                   </a>
                );
