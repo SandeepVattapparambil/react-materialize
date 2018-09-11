@@ -77,6 +77,11 @@ import CardImage from "./components/app-card/app-card-image/CardImage";
 import CardTabs from "./components/app-card/app-card-tabs/CardTabs";
 
 /**
+ * Carousel
+ */
+import Carousel from "./components/app-carousel/Carousel";
+
+/**
  * Media
  */
 import Image from "./components/app-image/Image";
@@ -366,7 +371,9 @@ ReactDOM.render(
                         imageSrc: "https://materializecss.com/images/yuna.jpg",
                         alt: "me"
                      },
-                     onClick: (() => {alert('hello')})
+                     onClick: () => {
+                        alert("hello");
+                     }
                   },
                   {
                      title: "title",
@@ -385,6 +392,15 @@ ReactDOM.render(
                ]}
             />
          </Collections>
+
+         <Carousel
+         type="carousel-slider"
+            imageData={[
+               "https://placeimg.com/640/480/any",
+               "https://placeimg.com/640/480/any",
+               "https://placeimg.com/640/480/any"
+            ]}
+         />
       </Row>
    </Container>,
    document.getElementById("container")
