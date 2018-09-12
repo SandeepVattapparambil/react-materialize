@@ -7,12 +7,7 @@
 /**
  * Import react library
  */
-import React, { Component, Fragement } from "react";
-
-/**
- * Import components
- */
-import Button from "../../app-button/Button";
+import React, { Component, Fragment } from "react";
 
 /**
  * @class
@@ -26,37 +21,22 @@ class CarouselText extends Component {
    }
    render() {
       return (
-         <Fragement>
+         <Fragment>
             <div className="carousel-fixed-item center">
-               <Button
-                  type="raised"
-                  size="normal"
-                  disabled={false}
-                  label="Click"
-                  color="white"
-                  textColor="grey-text"
-                  wavesEffect={true}
-                  wavesType="regular"
-                  wavesColor="waves-red"
-                  href="http://www.sandeepv.in"
-                  onClick={() => {
-                     alert("hello");
-                  }}>
-                  <Icon icon="cloud" align="left" />
-               </Button>
+               {this.props.button ? this.props.button : ""}
             </div>
             {this.props.textData.map((item, key) => {
                return (
                   <div
                      key={key}
-                     className={`carousel-item ${item.textColor} ${item.bgColor}`}
+                     className={`carousel-item ${item.titleColor} ${item.bgColor}`}
                      href={`#${key}`}>
                      <h2> {item.title} </h2>
-                     <p className={item.textColor}> {item.content} </p>
+                     <p className={item.titleColor}> {item.content} </p>
                   </div>
                );
             })}
-         </Fragement>
+         </Fragment>
       );
    }
 }
