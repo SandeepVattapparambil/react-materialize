@@ -55,7 +55,6 @@ class Collapsible extends Component {
          outDuration: this.state.options.collapsibleOptions.outDuration || 300
       };
       this.instances = M.Collapsible.init(this.elements, options);
-      console.log(this.instances);
    }
    render() {
       return (
