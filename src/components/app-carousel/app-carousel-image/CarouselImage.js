@@ -7,7 +7,7 @@
 /**
  * Import react library
  */
-import React, { Component, Fragement } from "react";
+import React, { Component, Fragment } from "react";
 
 /**
  * @class
@@ -21,7 +21,7 @@ class CarouselImage extends Component {
    }
    render() {
       return (
-         <Fragement>
+          <Fragment>
             {this.props.imageData.map((item, key) => {
                return (
                   <a key={key} className="carousel-item" href={`#${key}`}>
@@ -29,7 +29,7 @@ class CarouselImage extends Component {
                   </a>
                );
             })}
-         </Fragement>
+          </Fragment>
       );
    }
 }
