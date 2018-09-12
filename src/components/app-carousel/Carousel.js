@@ -62,99 +62,97 @@ class Carousel extends Component {
          onCycleTo: this.state.options.carouselOptions.onCycleTo || null
       };
       this.instances = M.Carousel.init(this.elements, options);
-
-      console.log(this.elements);
-      console.log(this.instances);
-      //console.log(M.Carousel.getInstance());
    }
 
+   //TODO
+   ///////////////////////////////////////////////////////////////////////////////////////////////
    /**
     * A helper function to get the single instance of carousel
     */
-   _getInstance = element => {};
+//    _getInstance = element => {};
 
-   /**
-    * @function
-    * Move carousel to next slide or go forward a given amount of slides.
-    * @inner
-    * @name _next
-    * @memberof Carousel
-    * @param {Number} n - How many times the carousel slides.
-    */
-   _next = n => {
-      this.instances.next(n);
-   };
+//    /**
+//     * @function
+//     * Move carousel to next slide or go forward a given amount of slides.
+//     * @inner
+//     * @name _next
+//     * @memberof Carousel
+//     * @param {Number} n - How many times the carousel slides.
+//     */
+//    _next = n => {
+//       this.instances.next(n);
+//    };
 
-   /**
-    * @function
-    * Move carousel to previous slide or go back a given amount of slides.
-    * @inner
-    * @name _prev
-    * @memberof Carousel
-    * @param {Number} n - How many times the carousel slides.
-    */
-   _prev = n => {
-      this.instances.prev(n);
-   };
+//    /**
+//     * @function
+//     * Move carousel to previous slide or go back a given amount of slides.
+//     * @inner
+//     * @name _prev
+//     * @memberof Carousel
+//     * @param {Number} n - How many times the carousel slides.
+//     */
+//    _prev = n => {
+//       this.instances.prev(n);
+//    };
 
-   /**
-    * @function
-    * Move carousel to nth slide
-    * @inner
-    * @name _set
-    * @memberof Carousel
-    * @param {Number} i - Index of slide.
-    */
-   _set = i => {
-      this.instances.set(i);
-   };
+//    /**
+//     * @function
+//     * Move carousel to nth slide
+//     * @inner
+//     * @name _set
+//     * @memberof Carousel
+//     * @param {Number} i - Index of slide.
+//     */
+//    _set = i => {
+//       this.instances.set(i);
+//    };
 
-   /**
-    * @function
-    * Destroy plugin instance and teardown.
-    * @inner
-    * @name _destroy
-    * @memberof Carousel
-    */
-   _destroy = () => {
-      this.instances.destroy();
-   };
+//    /**
+//     * @function
+//     * Destroy plugin instance and teardown.
+//     * @inner
+//     * @name _destroy
+//     * @memberof Carousel
+//     */
+//    _destroy = () => {
+//       this.instances.destroy();
+//    };
 
-   /**
-    * A helper function to get options the instance was initialized with.
-    */
-   _getInstanceOptions = () => {
-      return this.elements.options;
-   };
+//    /**
+//     * A helper function to get options the instance was initialized with.
+//     */
+//    _getInstanceOptions = () => {
+//       return this.elements.options;
+//    };
 
-   /**
-    * A helper function to get the element on which the carousel is initialized
-    */
-   _getEl = () => {
-      return this.elements.el;
-   };
+//    /**
+//     * A helper function to get the element on which the carousel is initialized
+//     */
+//    _getEl = () => {
+//       return this.elements.el;
+//    };
 
-   /**
-    * A helper function to check whether the carousel is pressed
-    */
-   _isPressed = () => {
-      return this.elements.pressed;
-   };
+//    /**
+//     * A helper function to check whether the carousel is pressed
+//     */
+//    _isPressed = () => {
+//       return this.elements.pressed;
+//    };
 
-   /**
-    * A helper function to check whether the carousel is dragged
-    */
-   _isDragged = () => {
-      return this.elements.dragged;
-   };
+//    /**
+//     * A helper function to check whether the carousel is dragged
+//     */
+//    _isDragged = () => {
+//       return this.elements.dragged;
+//    };
 
-   /**
-    * A helper function to get the index of the current center item of the carousel
-    */
-   _getCenter = () => {
-      return this.elements.center;
-   };
-
+//    /**
+//     * A helper function to get the index of the current center item of the carousel
+//     */
+//    _getCenter = () => {
+//       return this.elements.center;
+//    };
+///////////////////////////////////////////////////////////////////////////////////////////////
    /**
     * Render the carousel
     */
