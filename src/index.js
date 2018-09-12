@@ -55,6 +55,11 @@ import Button from "./components/app-button/Button";
 import Fab from "./components/app-floating-action-button/FloatingActionButton";
 
 /**
+ * Collapsible
+ */
+import Collapsible from "./components/app-collapsible/Collapsible";
+
+/**
  * Footer
  */
 import Footer from "./components/app-footer/Footer";
@@ -405,10 +410,30 @@ ReactDOM.render(
          <Carousel
             type="carousel-slider"
             textData={[
-                {title: "First Panel", content: "This is the first panel", titleColor: "black-text", bgColor: "red"},
-                {title: "Second Panel", content: "This is the second panel", titleColor: "black-text", bgColor: "green"},
-                {title: "Third Panel", content: "This is the third panel", titleColor: "black-text", bgColor: "blue"},
-                {title: "Last Panel", content: "This is the last panel", titleColor: "black-text", bgColor: "amber"}
+               {
+                  title: "First Panel",
+                  content: "This is the first panel",
+                  titleColor: "black-text",
+                  bgColor: "red"
+               },
+               {
+                  title: "Second Panel",
+                  content: "This is the second panel",
+                  titleColor: "black-text",
+                  bgColor: "green"
+               },
+               {
+                  title: "Third Panel",
+                  content: "This is the third panel",
+                  titleColor: "black-text",
+                  bgColor: "blue"
+               },
+               {
+                  title: "Last Panel",
+                  content: "This is the last panel",
+                  titleColor: "black-text",
+                  bgColor: "amber"
+               }
             ]}
             button={
                <Button
@@ -429,6 +454,115 @@ ReactDOM.render(
                </Button>
             }
          />
+
+         {/* <Collapsible
+            type="accordion"
+            collapsibleData={[
+               {
+                  icon: "filter_drama",
+                  header: "First",
+                  headerBgColor: "white",
+                  headerTextColor: "black-text",
+                  body: "Lorem ipsum dolor sit amet.",
+                  bodyBgColor: "white",
+                  bodyTextColor: "black-text",
+                  active: true
+               },
+               {
+                  icon: "filter_drama",
+                  header: "First",
+                  headerBgColor: "white",
+                  headerTextColor: "black-text",
+                  body: "Lorem ipsum dolor sit amet.",
+                  bodyBgColor: "white",
+                  bodyTextColor: "black-text",
+               },
+               {
+                  icon: "filter_drama",
+                  header: "First",
+                  headerBgColor: "white",
+                  headerTextColor: "black-text",
+                  body: "Lorem ipsum dolor sit amet.",
+                  bodyBgColor: "white",
+                  bodyTextColor: "black-text",
+               }
+            ]}
+         /> */}
+          <Collapsible
+            type="popout"
+            collapsibleData={[
+               {
+                  icon: "filter_drama",
+                  header: "First",
+                  headerBgColor: "white",
+                  headerTextColor: "black-text",
+                  body: "Lorem ipsum dolor sit amet.",
+                  bodyBgColor: "white",
+                  bodyTextColor: "black-text",
+               },
+               {
+                  icon: "filter_drama",
+                  header: "First",
+                  headerBgColor: "white",
+                  headerTextColor: "black-text",
+                  body: "Lorem ipsum dolor sit amet.",
+                  bodyBgColor: "white",
+                  bodyTextColor: "black-text",
+                  active: true
+               },
+               {
+                  icon: "filter_drama",
+                  header: "First",
+                  headerBgColor: "white",
+                  headerTextColor: "black-text",
+                  body: "Lorem ipsum dolor sit amet.",
+                  bodyBgColor: "white",
+                  bodyTextColor: "black-text",
+               }
+            ]}
+         />
+          {/* <Collapsible
+            type="expandable"
+            collapsibleData={[
+               {
+                  icon: "filter_drama",
+                  header: "First",
+                  headerBgColor: "white",
+                  headerTextColor: "black-text",
+                  body: "Lorem ipsum dolor sit amet.",
+                  bodyBgColor: "white",
+                  bodyTextColor: "black-text",
+               },
+               {
+                  icon: "filter_drama",
+                  header: "First",
+                  headerBgColor: "white",
+                  headerTextColor: "black-text",
+                  body: "Lorem ipsum dolor sit amet.",
+                  bodyBgColor: "white",
+                  bodyTextColor: "black-text",
+               },
+               {
+                  icon: "filter_drama",
+                  header: "First",
+                  headerBgColor: "white",
+                  headerTextColor: "black-text",
+                  body: "Lorem ipsum dolor sit amet.",
+                  bodyBgColor: "white",
+                  bodyTextColor: "black-text",
+               },
+               {
+                  icon: "filter_drama",
+                  header: "First",
+                  headerBgColor: "white",
+                  headerTextColor: "black-text",
+                  body: "Lorem ipsum dolor sit amet.",
+                  bodyBgColor: "white",
+                  bodyTextColor: "black-text",
+                  active: true
+               }
+            ]} 
+         />  */}
       </Row>
    </Container>,
    document.getElementById("container")

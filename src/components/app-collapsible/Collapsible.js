@@ -24,19 +24,70 @@ import Icon from "../app-icon/Icon";
 class Collapsible extends Component {
    constructor(props) {
       super(props);
+      let config = { ...props };
+      this.state = {
+         options: {
+            collapsibleOptions: config.collapsibleOptions || {},
+            type: config.type || " ",
+            collapsibleData: config.collapsibleData || []
+         }
+      };
+      this.elements;
+      this.instances;
+   }
+
+   componentDidMount() {
+      this.elements = document.querySelectorAll(".collapsible");
+      let options = {
+         accordion:
+            this.state.options.type === "expandable"
+               ? false
+               : this.state.options.type === "popout"
+                  ? true
+                  : this.state.options.collapsibleOptions.accordion
+                     ? true
+                     : false || true,
+         onOpenStart: this.state.options.collapsibleOptions.onOpenStart || null,
+         onOpenEnd: this.state.options.collapsibleOptions.onOpenEnd || null,
+         onCloseStart: this.state.options.collapsibleOptions.onCloseStart || null,
+         onCloseEnd: this.state.options.collapsibleOptions.onCloseEnd || null,
+         inDuration: this.state.options.collapsibleOptions.inDuration || 300,
+         outDuration: this.state.options.collapsibleOptions.outDuration || 300
+      };
+      this.instances = M.Collapsible.init(this.elements, options);
+      console.log(this.instances);
    }
    render() {
       return (
-         <ul class="collapsible">
-            <li>
-               <div class="collapsible-header">
-                  <i class="material-icons">filter_drama</i>
-                  First
-               </div>
-               <div class="collapsible-body">
-                  <span>Lorem ipsum dolor sit amet.</span>
-               </div>
-            </li>
+         <ul
+            className={`collapsible ${
+               this.state.options.type === "accordion"
+                  ? " "
+                  : this.state.options.type === "expandable"
+                     ? "expandable"
+                     : this.state.options.type === "popout"
+                        ? "popout"
+                        : ""
+            }`}>
+            {this.state.options.collapsibleData.map((item, key) => {
+               return (
+                  <li key={key} className={item.active ? "active" : ""}>
+                     <div
+                        className={`collapsible-header ${item.headerTextColor} ${
+                           item.headerBgColor
+                        }`}>
+                        <Icon icon={item.icon} />
+                        {item.header}
+                     </div>
+                     <div
+                        className={`collapsible-body ${item.bodyTextColor} ${
+                           item.bodyBgColor
+                        }`}>
+                        <span>{item.body}</span>
+                     </div>
+                  </li>
+               );
+            })}
          </ul>
       );
    }
