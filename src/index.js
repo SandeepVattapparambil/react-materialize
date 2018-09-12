@@ -455,7 +455,7 @@ ReactDOM.render(
             }
          />
 
-         {/* <Collapsible
+          <Collapsible
             type="accordion"
             collapsibleData={[
                {
@@ -487,7 +487,7 @@ ReactDOM.render(
                   bodyTextColor: "black-text",
                }
             ]}
-         /> */}
+         /> 
           <Collapsible
             type="popout"
             collapsibleData={[
@@ -521,7 +521,7 @@ ReactDOM.render(
                }
             ]}
          />
-          {/* <Collapsible
+           <Collapsible
             type="expandable"
             collapsibleData={[
                {
@@ -562,7 +562,7 @@ ReactDOM.render(
                   active: true
                }
             ]} 
-         />  */}
+         />  
       </Row>
    </Container>,
    document.getElementById("container")
