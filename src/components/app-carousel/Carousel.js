@@ -10,6 +10,12 @@
 import React, { Component } from "react";
 
 /**
+ * Import Components
+ */
+import CarouselImage from "./app-carousel-image/CarouselImage";
+import CarouselText from "./app-carousel-text/CarouselText";
+
+/**
  * @class
  * @name Carousel
  * @description MaterializeCSS Carousel Row.
@@ -26,15 +32,16 @@ class Carousel extends Component {
             type: config.type || " ",
             carouselOptions: config.carouselOptions || {},
             imageData: config.imageData || [],
-            textData: config.textData || []
+            textData: config.textData || [],
+            button: config.button || " "
          }
       };
-      this.element;
+      this.elements;
       this.instances;
    }
 
    componentDidMount() {
-      this.element = document.querySelector(".carousel");
+      this.elements = document.querySelectorAll(".carousel");
       //Defaults
       let options = {
          duration: this.state.options.carouselOptions.duration || 200,
@@ -54,8 +61,17 @@ class Carousel extends Component {
          noWrap: this.state.options.carouselOptions.noWrap || false,
          onCycleTo: this.state.options.carouselOptions.onCycleTo || null
       };
-      this.instance = M.Carousel.init(this.element, options);
+      this.instances = M.Carousel.init(this.elements, options);
+
+      console.log(this.elements);
+      console.log(this.instances);
+      //console.log(M.Carousel.getInstance());
    }
+
+   /**
+    * A helper function to get the single instance of carousel
+    */
+   _getInstance = element => {};
 
    /**
     * @function
@@ -66,7 +82,7 @@ class Carousel extends Component {
     * @param {Number} n - How many times the carousel slides.
     */
    _next = n => {
-      this.instance.next(n);
+      this.instances.next(n);
    };
 
    /**
@@ -78,7 +94,7 @@ class Carousel extends Component {
     * @param {Number} n - How many times the carousel slides.
     */
    _prev = n => {
-      this.instance.prev(n);
+      this.instances.prev(n);
    };
 
    /**
@@ -90,7 +106,7 @@ class Carousel extends Component {
     * @param {Number} i - Index of slide.
     */
    _set = i => {
-       this.instance.set(i);
+      this.instances.set(i);
    };
 
    /**
@@ -101,42 +117,42 @@ class Carousel extends Component {
     * @memberof Carousel
     */
    _destroy = () => {
-       this.instance.destroy();
+      this.instances.destroy();
    };
 
    /**
     * A helper function to get options the instance was initialized with.
     */
    _getInstanceOptions = () => {
-      return this.element.options;
+      return this.elements.options;
    };
 
    /**
     * A helper function to get the element on which the carousel is initialized
     */
    _getEl = () => {
-      return this.element;
+      return this.elements.el;
    };
 
    /**
     * A helper function to check whether the carousel is pressed
     */
    _isPressed = () => {
-      return this.element.pressed;
+      return this.elements.pressed;
    };
 
    /**
     * A helper function to check whether the carousel is dragged
     */
    _isDragged = () => {
-      return this.element.dragged;
+      return this.elements.dragged;
    };
 
    /**
     * A helper function to get the index of the current center item of the carousel
     */
    _getCenter = () => {
-      return this.element.center;
+      return this.elements.center;
    };
 
    /**
@@ -144,14 +160,23 @@ class Carousel extends Component {
     */
    render() {
       return (
-         <div className={`carousel ${this.state.options.type}`}>
-            {this.state.options.imageData.map((item, key) => {
-               return (
-                  <a key={key} className="carousel-item" href={`#${key}`}>
-                     <img src={item} />
-                  </a>
-               );
-            })}
+         <div
+            className={`carousel ${this.state.options.type} ${
+               this.state.options.textData ? "center" : ""
+            }`}>
+            {this.state.options.imageData.length ? (
+               <CarouselImage imageData={this.state.options.imageData} />
+            ) : (
+               ""
+            )}
+            {this.state.options.textData.length != 0 ? (
+               <CarouselText
+                  button={this.state.options.button}
+                  textData={this.state.options.textData}
+               />
+            ) : (
+               ""
+            )}
          </div>
       );
    }
