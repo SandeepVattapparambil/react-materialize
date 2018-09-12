@@ -394,7 +394,7 @@ ReactDOM.render(
          </Collections>
 
          <Carousel
-         type="carousel-slider"
+            type="carousel-slider"
             imageData={[
                "https://placeimg.com/640/480/any",
                "https://placeimg.com/640/480/any",
@@ -403,15 +403,32 @@ ReactDOM.render(
          />
 
          <Carousel
-         type="carousel-slider"
+            type="carousel-slider"
             textData={[
-               "https://placeimg.com/640/480/any",
-               "https://placeimg.com/640/480/any",
-               "https://placeimg.com/640/480/any"
+                {title: "First Panel", content: "This is the first panel", titleColor: "black-text", bgColor: "red"},
+                {title: "Second Panel", content: "This is the second panel", titleColor: "black-text", bgColor: "green"},
+                {title: "Third Panel", content: "This is the third panel", titleColor: "black-text", bgColor: "blue"},
+                {title: "Last Panel", content: "This is the last panel", titleColor: "black-text", bgColor: "amber"}
             ]}
+            button={
+               <Button
+                  type="raised"
+                  size="normal"
+                  disabled={false}
+                  label="Click"
+                  color="white"
+                  textColor="grey-text"
+                  wavesEffect={true}
+                  wavesType="regular"
+                  wavesColor="waves-red"
+                  href="http://www.sandeepv.in"
+                  onClick={() => {
+                     alert("hello");
+                  }}>
+                  <Icon icon="cloud" align="left" />
+               </Button>
+            }
          />
-
-
       </Row>
    </Container>,
    document.getElementById("container")
