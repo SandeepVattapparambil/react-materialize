@@ -126,6 +126,7 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
+
    <Container>
       <Breadcrumbs
          list={[
@@ -399,6 +400,7 @@ ReactDOM.render(
          </Collections>
 
          <Carousel
+            _getInstance
             type="carousel-slider"
             imageData={[
                "https://placeimg.com/640/480/any",
