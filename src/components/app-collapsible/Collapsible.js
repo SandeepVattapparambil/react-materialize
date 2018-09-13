@@ -29,15 +29,22 @@ class Collapsible extends Component {
          options: {
             collapsibleOptions: config.collapsibleOptions || {},
             type: config.type || " ",
-            collapsibleData: config.collapsibleData || []
+            collapsibleData: config.collapsibleData || [],
+            componentId: this._generateComponentId()
          }
       };
-      this.elements;
-      this.instances;
+      this.element;
+      this.instance;
    }
 
+   _generateComponentId = () => {
+      return Math.random()
+         .toString(36)
+         .substring(7);
+   };
+
    componentDidMount() {
-      this.elements = document.querySelectorAll(".collapsible");
+      this.element = document.querySelector(`#${this.state.options.componentId}`);
       let options = {
          accordion:
             this.state.options.type === "expandable"
@@ -54,11 +61,12 @@ class Collapsible extends Component {
          inDuration: this.state.options.collapsibleOptions.inDuration || 300,
          outDuration: this.state.options.collapsibleOptions.outDuration || 300
       };
-      this.instances = M.Collapsible.init(this.elements, options);
+      this.instance = M.Collapsible.init(this.element, options);
    }
    render() {
       return (
          <ul
+            id={this.state.options.componentId}
             className={`collapsible ${
                this.state.options.type === "accordion"
                   ? " "
