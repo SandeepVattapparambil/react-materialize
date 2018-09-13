@@ -37,6 +37,9 @@ class Collapsible extends Component {
       this.instance;
    }
 
+   /**
+    * A helper function to generate a unique identifier for component
+    */
    _generateComponentId = () => {
       return Math.random()
          .toString(36)
