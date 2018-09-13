@@ -51,7 +51,7 @@ class Carousel extends Component {
    };
 
    componentDidMount() {
-      this.element = document.querySelector(`#${this.state.options.componentId}`);
+      this.element = document.querySelector(`#carousel${this.state.options.componentId}`);
       //Defaults
       let options = {
          duration: this.state.options.carouselOptions.duration || 200,
@@ -74,24 +74,26 @@ class Carousel extends Component {
       this.instance = M.Carousel.init(this.element, options);
    }
 
-   //TODO
-   ///////////////////////////////////////////////////////////////////////////////////////////////
    /**
     * A helper function to get the single instance of carousel
     */
-   //    _getInstance = element => {};
+   _getInstance = () => {
+      return this.props._getInstance(this.instance);
+   };
 
-   //    /**
-   //     * @function
-   //     * Move carousel to next slide or go forward a given amount of slides.
-   //     * @inner
-   //     * @name _next
-   //     * @memberof Carousel
-   //     * @param {Number} n - How many times the carousel slides.
-   //     */
-   //    _next = n => {
-   //       this.instances.next(n);
-   //    };
+   //TODO
+   ///////////////////////////////////////////////////////////////////////////////////////////////
+      /**
+       * @function
+       * Move carousel to next slide or go forward a given amount of slides.
+       * @inner
+       * @name _next
+       * @memberof Carousel
+       * @param {Number} n - How many times the carousel slides.
+       */
+      _next = n => {
+         this.instances.next(n);
+      };
 
    //    /**
    //     * @function
@@ -169,7 +171,7 @@ class Carousel extends Component {
    render() {
       return (
          <div
-            id={this.state.options.componentId}
+            id={`carousel${this.state.options.componentId}`}
             className={`carousel ${this.state.options.type} ${
                this.state.options.textData ? "center" : ""
             }`}>
