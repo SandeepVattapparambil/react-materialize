@@ -92,6 +92,8 @@ import Carousel from "./components/app-carousel/Carousel";
 import Image from "./components/app-image/Image";
 import Video from "./components/app-video/Video";
 
+import Test from "./components/test_compnt/Test";
+
 /**
  * Import service worker
  */
@@ -126,7 +128,6 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-
    <Container>
       <Breadcrumbs
          list={[
@@ -400,7 +401,6 @@ ReactDOM.render(
          </Collections>
 
          <Carousel
-            _getInstance
             type="carousel-slider"
             imageData={[
                "https://placeimg.com/640/480/any",
@@ -408,6 +408,8 @@ ReactDOM.render(
                "https://placeimg.com/640/480/any"
             ]}
          />
+
+         <Test />
 
          <Carousel
             type="carousel-slider"
@@ -457,7 +459,7 @@ ReactDOM.render(
             }
          />
 
-          <Collapsible
+         <Collapsible
             type="accordion"
             collapsibleData={[
                {
@@ -477,7 +479,7 @@ ReactDOM.render(
                   headerTextColor: "black-text",
                   body: "Lorem ipsum dolor sit amet.",
                   bodyBgColor: "white",
-                  bodyTextColor: "black-text",
+                  bodyTextColor: "black-text"
                },
                {
                   icon: "filter_drama",
@@ -486,11 +488,11 @@ ReactDOM.render(
                   headerTextColor: "black-text",
                   body: "Lorem ipsum dolor sit amet.",
                   bodyBgColor: "white",
-                  bodyTextColor: "black-text",
+                  bodyTextColor: "black-text"
                }
             ]}
-         /> 
-          <Collapsible
+         />
+         <Collapsible
             type="popout"
             collapsibleData={[
                {
@@ -500,7 +502,7 @@ ReactDOM.render(
                   headerTextColor: "black-text",
                   body: "Lorem ipsum dolor sit amet.",
                   bodyBgColor: "white",
-                  bodyTextColor: "black-text",
+                  bodyTextColor: "black-text"
                },
                {
                   icon: "filter_drama",
@@ -519,11 +521,11 @@ ReactDOM.render(
                   headerTextColor: "black-text",
                   body: "Lorem ipsum dolor sit amet.",
                   bodyBgColor: "white",
-                  bodyTextColor: "black-text",
+                  bodyTextColor: "black-text"
                }
             ]}
          />
-           <Collapsible
+         <Collapsible
             type="expandable"
             collapsibleData={[
                {
@@ -533,7 +535,7 @@ ReactDOM.render(
                   headerTextColor: "black-text",
                   body: "Lorem ipsum dolor sit amet.",
                   bodyBgColor: "white",
-                  bodyTextColor: "black-text",
+                  bodyTextColor: "black-text"
                },
                {
                   icon: "filter_drama",
@@ -542,7 +544,7 @@ ReactDOM.render(
                   headerTextColor: "black-text",
                   body: "Lorem ipsum dolor sit amet.",
                   bodyBgColor: "white",
-                  bodyTextColor: "black-text",
+                  bodyTextColor: "black-text"
                },
                {
                   icon: "filter_drama",
@@ -551,7 +553,7 @@ ReactDOM.render(
                   headerTextColor: "black-text",
                   body: "Lorem ipsum dolor sit amet.",
                   bodyBgColor: "white",
-                  bodyTextColor: "black-text",
+                  bodyTextColor: "black-text"
                },
                {
                   icon: "filter_drama",
@@ -563,8 +565,8 @@ ReactDOM.render(
                   bodyTextColor: "black-text",
                   active: true
                }
-            ]} 
-         />  
+            ]}
+         />
       </Row>
    </Container>,
    document.getElementById("container")
