@@ -47,7 +47,7 @@ class Collapsible extends Component {
    };
 
    componentDidMount() {
-      this.element = document.querySelector(`#${this.state.options.componentId}`);
+      this.element = document.querySelector(`#collapsible${this.state.options.componentId}`);
       let options = {
          accordion:
             this.state.options.type === "expandable"
@@ -69,7 +69,7 @@ class Collapsible extends Component {
    render() {
       return (
          <ul
-            id={this.state.options.componentId}
+            id={`collapsible${this.state.options.componentId}`}
             className={`collapsible ${
                this.state.options.type === "accordion"
                   ? " "
