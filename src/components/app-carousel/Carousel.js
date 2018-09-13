@@ -50,50 +50,54 @@ class Carousel extends Component {
          .substring(7);
    };
 
-   componentDidMount() {
-      this.element = document.querySelector(`#carousel${this.state.options.componentId}`);
+   _componentInit = () => {
+      let self = this;
+      //get element using a unique id
+      self.element = document.querySelector(`#carousel${self.state.options.componentId}`);
       //Defaults
       let options = {
-         duration: this.state.options.carouselOptions.duration || 200,
-         dist: this.state.options.carouselOptions.dist || -100,
-         shift: this.state.options.carouselOptions.shift || 0,
-         padding: this.state.options.carouselOptions.padding || 0,
-         numVisible: this.state.options.carouselOptions.numVisible || 5,
+         duration: self.state.options.carouselOptions.duration || 200,
+         dist: self.state.options.carouselOptions.dist || -100,
+         shift: self.state.options.carouselOptions.shift || 0,
+         padding: self.state.options.carouselOptions.padding || 0,
+         numVisible: self.state.options.carouselOptions.numVisible || 5,
          fullWidth:
-            (this.state.options.type === "carousel-slider"
+            (self.state.options.type === "carousel-slider"
                ? true
-               : this.state.options.type === "carousel-fixed-item"
+               : self.state.options.type === "carousel-fixed-item"
                   ? true
                   : false) ||
-            this.state.options.carouselOptions.fullWidth ||
+            self.state.options.carouselOptions.fullWidth ||
             false,
-         indicators: this.state.options.carouselOptions.indicators || false,
-         noWrap: this.state.options.carouselOptions.noWrap || false,
-         onCycleTo: this.state.options.carouselOptions.onCycleTo || null
+         indicators: self.state.options.carouselOptions.indicators || false,
+         noWrap: self.state.options.carouselOptions.noWrap || false,
+         onCycleTo: self.state.options.carouselOptions.onCycleTo || null
       };
-      this.instance = M.Carousel.init(this.element, options);
-   }
-
-   /**
-    * A helper function to get the single instance of carousel
-    */
-   _getInstance = () => {
-      return this.props._getInstance(this.instance);
+      //Materializecss init
+      self.instance = M.Carousel.init(self.element, options);
    };
+
+   componentDidMount() {
+      let self = this;
+      self._componentInit();
+      if(self.props._instanceData){
+            self.props._instanceData(self.instance);
+      }
+   }
 
    //TODO
    ///////////////////////////////////////////////////////////////////////////////////////////////
-      /**
-       * @function
-       * Move carousel to next slide or go forward a given amount of slides.
-       * @inner
-       * @name _next
-       * @memberof Carousel
-       * @param {Number} n - How many times the carousel slides.
-       */
-      _next = n => {
-         this.instances.next(n);
-      };
+   //    /**
+   //     * @function
+   //     * Move carousel to next slide or go forward a given amount of slides.
+   //     * @inner
+   //     * @name _next
+   //     * @memberof Carousel
+   //     * @param {Number} n - How many times the carousel slides.
+   //     */
+   //    _next = n => {
+   //       this.instances.next(n);
+   //    };
 
    //    /**
    //     * @function
