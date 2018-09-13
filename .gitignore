@@ -23,3 +23,5 @@ yarn-error.log*
 package-lock.json
 
 .vscode
+
+src/components/test_compnt
