@@ -34,6 +34,8 @@ class Button extends Component {
             wavesColor: config.wavesColor || " ",
             pulse: config.pulse || false,
             href: config.href,
+            dataTarget: config.dataTarget || " ",
+            trigger: config.trigger || " ",
             onClick: config.onClick || (() => {})()
          }
       };
@@ -126,15 +128,16 @@ class Button extends Component {
                 ${this.state.options.color} 
                 ${this.state.options.textColor}
                 ${this.state.options.disabled ? "disabled" : ""}
-                ${
-                   this.state.options.type === "floating" && this.state.options.pulse
-                      ? "pulse"
-                      : ""
-                }`}
+                ${this.state.options.type === "floating" && this.state.options.pulse ? "pulse" : "" }
+                ${this.state.options.trigger ? this.state.options.trigger : ""}`
+            }
             href={`${
                this.state.options.href ? this.state.options.href : "javascript:void(0)"
             }`}
-            onClick={this.state.options.onClick}>
+            onClick={this.state.options.onClick}
+            data-target={
+               this.state.options.dataTarget ? this.state.options.dataTarget : ""
+            }>
             {this.state.options.type === "floating" ? "" : this.state.options.label}
             {this.props.children}
          </a>
