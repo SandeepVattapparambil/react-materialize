@@ -45,7 +45,7 @@ class Carousel extends Component {
     * @function
     * A helper function to generate a unique identifier for component
     * @name _generateComponentId
-    * @returns {String} - A randow string
+    * @returns {String} - A unique random string
     */
    _generateComponentId = () => {
       return Math.random()
