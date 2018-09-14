@@ -42,7 +42,10 @@ class Carousel extends Component {
    }
 
    /**
+    * @function
     * A helper function to generate a unique identifier for component
+    * @name _generateComponentId
+    * @returns {String} - A randow string
     */
    _generateComponentId = () => {
       return Math.random()
@@ -50,6 +53,12 @@ class Carousel extends Component {
          .substring(7);
    };
 
+   /**
+    * @function
+    * A helper function to initialize M.Carousel with passed in parameters
+    * @name _componentInit
+    * @returns {Object} - The initialized carousel instance (this.instance)
+    */
    _componentInit = () => {
       let self = this;
       //get element using a unique id
@@ -77,6 +86,9 @@ class Carousel extends Component {
       self.instance = M.Carousel.init(self.element, options);
    };
 
+   /**
+    * DOM ready lifecycle event
+    */
    componentDidMount() {
       let self = this;
       self._componentInit();
@@ -87,6 +99,16 @@ class Carousel extends Component {
 
    /**
     * @function
+    * A helper function to get the currenlty initialized carousel
+    * @name _getComponentInstance
+    * @returns {Oobject} - The currenlty initialized carousel component
+    */
+   _getComponentInstance = () => {
+      return M.Carousel.getInstance(this.element);
+   };
+
+   /**
+    * @function
     * Move carousel to next slide or go forward a given amount of slides.
     * @inner
     * @name _next
@@ -94,8 +116,7 @@ class Carousel extends Component {
     * @param {Number} n - How many times the carousel slides.
     */
    _next = n => {
-         console.log('next');
-      this.instance.__proto__.next(n ? n : "");
+      this._getComponentInstance().next(n);
    };
 
    /**
@@ -107,7 +128,7 @@ class Carousel extends Component {
     * @param {Number} n - How many times the carousel slides.
     */
    _prev = n => {
-      this.instances.prev(n);
+      this._getComponentInstance().prev(n);
    };
 
    /**
@@ -119,7 +140,7 @@ class Carousel extends Component {
     * @param {Number} i - Index of slide.
     */
    _set = i => {
-      this.instances.set(i);
+      this._getComponentInstance().set(i);
    };
 
    /**
@@ -130,42 +151,7 @@ class Carousel extends Component {
     * @memberof Carousel
     */
    _destroy = () => {
-      this.instances.destroy();
-   };
-
-   /**
-    * A helper function to get options the instance was initialized with.
-    */
-   _getInstanceOptions = () => {
-      return this.elements.options;
-   };
-
-   /**
-    * A helper function to get the element on which the carousel is initialized
-    */
-   _getEl = () => {
-      return this.elements.el;
-   };
-
-   /**
-    * A helper function to check whether the carousel is pressed
-    */
-   _isPressed = () => {
-      return this.elements.pressed;
-   };
-
-   /**
-    * A helper function to check whether the carousel is dragged
-    */
-   _isDragged = () => {
-      return this.elements.dragged;
-   };
-
-   /**
-    * A helper function to get the index of the current center item of the carousel
-    */
-   _getCenter = () => {
-      return this.elements.center;
+      this._getComponentInstance().destroy();
    };
 
    /**
