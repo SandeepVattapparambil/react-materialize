@@ -50,7 +50,7 @@ class Dropdown extends Component {
          onCloseStart: this.state.options.onCloseStart || (() => {}),
          onCloseEnd: this.state.options.onCloseEnd || (() => {})
       };
-      this.instance = M.Dropdown.init(this.element);
+      this.instance = M.Dropdown.init(this.element, options);
    }
 
    /**
@@ -79,24 +79,6 @@ class Dropdown extends Component {
             <ul id="dropdown1" className="dropdown-content">
                <li>
                   <a href="#!">one</a>
-               </li>
-               <li>
-                  <a href="#!">two</a>
-               </li>
-               <li>
-                  <a href="#!">three</a>
-               </li>
-               <li>
-                  <a href="#!">
-                     <i className="material-icons">view_module</i>
-                     four
-                  </a>
-               </li>
-               <li>
-                  <a href="#!">
-                     <i className="material-icons">cloud</i>
-                     five
-                  </a>
                </li>
             </ul>
          </Fragment>

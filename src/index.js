@@ -92,7 +92,12 @@ import Carousel from "./components/app-carousel/Carousel";
 import Image from "./components/app-image/Image";
 import Video from "./components/app-video/Video";
 
-import Test from "./components/test_compnt/Test";
+//import Test from "./components/test_compnt/Test";
+
+/**
+ * Dropdown
+ */
+import Dropdown from "./components/app-dropdown/Dropdown";
 
 /**
  * Import service worker
@@ -409,7 +414,7 @@ ReactDOM.render(
             ]}
          /> */}
 
-         <Test />
+         <Dropdown />
 
          {/* <Carousel
             type="carousel-slider"
