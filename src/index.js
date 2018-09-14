@@ -92,7 +92,7 @@ import Carousel from "./components/app-carousel/Carousel";
 import Image from "./components/app-image/Image";
 import Video from "./components/app-video/Video";
 
-// import Test from "./components/test_compnt/Test";
+import Test from "./components/test_compnt/Test";
 
 /**
  * Import service worker
@@ -129,7 +129,7 @@ ReactDOM.render(
 
 ReactDOM.render(
    <Container>
-      <Breadcrumbs
+      {/* <Breadcrumbs
          list={[
             {
                name: "First",
@@ -144,10 +144,10 @@ ReactDOM.render(
                link: "#!"
             }
          ]}
-      />
+      /> */}
       <br />
       <Row>
-         <Col
+         {/* <Col
             small="s6"
             medium="m6"
             large="l6"
@@ -239,9 +239,9 @@ ReactDOM.render(
             <Preloader type="circular" size="big" />
 
             <Preloader type="flashing" />
-         </Col>
+         </Col> */}
 
-         <Card
+         {/* <Card
             bgColor="blue-grey darken-1"
             textColor="white-text"
             title="Hello"
@@ -298,15 +298,15 @@ ReactDOM.render(
             }>
             I am a very simple card. I am good at containing small bits of information. I
             am convenient because I require little markup to use effectively.
-         </Card>
+         </Card> */}
 
-         <CardPanel column={{ small: "s12", medium: "m5" }} panelColor="teal">
+         {/* <CardPanel column={{ small: "s12", medium: "m5" }} panelColor="teal">
             I am a very simple card. I am good at containing small bits of information. I
             am convenient because I require little markup to use effectively. I am similar
             to what is called a panel in other frameworks.
-         </CardPanel>
+         </CardPanel> */}
 
-         <CardHorizontal
+         {/* <CardHorizontal
             column={{
                small: "s12",
                medium: "m7"
@@ -330,16 +330,16 @@ ReactDOM.render(
             <p>
                I am a very simple card. I am good at containing small bits of information.
             </p>
-         </CardHorizontal>
+         </CardHorizontal> */}
 
-         <CardTabs>
+         {/* <CardTabs>
             <p>
                I am a very simple card. I am good at containing small bits of information.
                I am convenient because I require little markup to use effectively.
             </p>
-         </CardTabs>
+         </CardTabs> */}
 
-         <Collections
+         {/* <Collections
             header={{ text: "Header", textColor: "black-text", bgColor: "lime" }}>
             <CollectionBasic
                collectionData={[
@@ -398,20 +398,20 @@ ReactDOM.render(
                   }
                ]}
             />
-         </Collections>
+         </Collections> */}
 
-         <Carousel
+         {/* <Carousel
             type="carousel-slider"
             imageData={[
                "https://placeimg.com/640/480/any",
                "https://placeimg.com/640/480/any",
                "https://placeimg.com/640/480/any"
             ]}
-         />
+         /> */}
 
-         {/* <Test /> */}
+         <Test />
 
-         <Carousel
+         {/* <Carousel
             type="carousel-slider"
             textData={[
                {
@@ -457,9 +457,9 @@ ReactDOM.render(
                   <Icon icon="cloud" align="left" />
                </Button>
             }
-         />
+         /> */}
 
-         <Collapsible
+         {/* <Collapsible
             type="accordion"
             collapsibleData={[
                {
@@ -491,8 +491,8 @@ ReactDOM.render(
                   bodyTextColor: "black-text"
                }
             ]}
-         />
-         <Collapsible
+         /> */}
+         {/* <Collapsible
             type="popout"
             collapsibleData={[
                {
@@ -524,8 +524,8 @@ ReactDOM.render(
                   bodyTextColor: "black-text"
                }
             ]}
-         />
-         <Collapsible
+         /> */}
+         {/* <Collapsible
             type="expandable"
             collapsibleData={[
                {
@@ -566,87 +566,87 @@ ReactDOM.render(
                   active: true
                }
             ]}
-         />
+         /> */}
       </Row>
    </Container>,
    document.getElementById("container")
 );
 
-ReactDOM.render(
-   <Footer
-      color="lime"
-      textColor="white-text"
-      subTextColor="grey-text text-lighten-4"
-      mainText="Footer Content"
-      subText="You can use rows and columns here to organize your footer content."
-      copyrightText="© 2014 Copyright Text"
-      moreLinks={[
-         {
-            name: "link1",
-            link: "#!"
-         },
-         {
-            name: "link2",
-            link: "#!"
-         },
-         {
-            name: "link3",
-            link: "#!"
-         },
-         {
-            name: "link4",
-            link: "#!"
-         }
-      ]}>
-      <Col large="l6" small="s12">
-         <FooterSection
-            type="textBlock"
-            data={{
-               title: "Footer Content",
-               titleColor: "white-text",
-               subText:
-                  "You can use rows and columns here to organize your footer content.",
-               subTtextColor: "grey-text text-lighten-4"
-            }}
-         />
-      </Col>
-      <Col large="l4" small="s12" offset={["l2"]}>
-         <FooterSection
-            type="linkBlock"
-            link="Links"
-            linkColor="white-text"
-            data={[
-               {
-                  name: "Link1",
-                  link: "#!",
-                  textColor: "grey-text text-lighten-3"
-               },
-               {
-                  name: "Link2",
-                  link: "#!",
-                  textColor: "grey-text text-lighten-3"
-               },
-               {
-                  name: "Link3",
-                  link: "#!",
-                  textColor: "grey-text text-lighten-3"
-               },
-               {
-                  name: "Link4",
-                  link: "#!",
-                  textColor: "grey-text text-lighten-3"
-               },
-               {
-                  name: "Link5",
-                  link: "#!",
-                  textColor: "grey-text text-lighten-3"
-               }
-            ]}
-         />
-      </Col>
-   </Footer>,
-   document.getElementById("footer")
-);
+// ReactDOM.render(
+//    <Footer
+//       color="lime"
+//       textColor="white-text"
+//       subTextColor="grey-text text-lighten-4"
+//       mainText="Footer Content"
+//       subText="You can use rows and columns here to organize your footer content."
+//       copyrightText="© 2014 Copyright Text"
+//       moreLinks={[
+//          {
+//             name: "link1",
+//             link: "#!"
+//          },
+//          {
+//             name: "link2",
+//             link: "#!"
+//          },
+//          {
+//             name: "link3",
+//             link: "#!"
+//          },
+//          {
+//             name: "link4",
+//             link: "#!"
+//          }
+//       ]}>
+//       <Col large="l6" small="s12">
+//          <FooterSection
+//             type="textBlock"
+//             data={{
+//                title: "Footer Content",
+//                titleColor: "white-text",
+//                subText:
+//                   "You can use rows and columns here to organize your footer content.",
+//                subTtextColor: "grey-text text-lighten-4"
+//             }}
+//          />
+//       </Col>
+//       <Col large="l4" small="s12" offset={["l2"]}>
+//          <FooterSection
+//             type="linkBlock"
+//             link="Links"
+//             linkColor="white-text"
+//             data={[
+//                {
+//                   name: "Link1",
+//                   link: "#!",
+//                   textColor: "grey-text text-lighten-3"
+//                },
+//                {
+//                   name: "Link2",
+//                   link: "#!",
+//                   textColor: "grey-text text-lighten-3"
+//                },
+//                {
+//                   name: "Link3",
+//                   link: "#!",
+//                   textColor: "grey-text text-lighten-3"
+//                },
+//                {
+//                   name: "Link4",
+//                   link: "#!",
+//                   textColor: "grey-text text-lighten-3"
+//                },
+//                {
+//                   name: "Link5",
+//                   link: "#!",
+//                   textColor: "grey-text text-lighten-3"
+//                }
+//             ]}
+//          />
+//       </Col>
+//    </Footer>,
+//    document.getElementById("footer")
+// );
 
 /**
  * Register service worker
