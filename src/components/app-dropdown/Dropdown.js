@@ -50,7 +50,7 @@ class Dropdown extends Component {
          onCloseStart: this.state.options.onCloseStart || (() => {}),
          onCloseEnd: this.state.options.onCloseEnd || (() => {})
       };
-      this.instance = M.Dropdown.init(this.element, options);
+      this.instance = M.Dropdown.init(this.element);
    }
 
    /**
