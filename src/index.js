@@ -409,7 +409,7 @@ ReactDOM.render(
             ]}
          />
 
-         <Test />
+         {/* <Test /> */}
 
          <Carousel
             type="carousel-slider"
