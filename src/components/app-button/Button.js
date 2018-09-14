@@ -124,7 +124,7 @@ class Button extends Component {
                       : ""
                 } 
                 ${btnType} 
-                ${btnSize} 
+                ${btnSize ? btnSize : ""} 
                 ${this.state.options.color} 
                 ${this.state.options.textColor}
                 ${this.state.options.disabled ? "disabled" : ""}
