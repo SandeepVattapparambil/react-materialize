@@ -92,6 +92,11 @@ import Carousel from "./components/app-carousel/Carousel";
 import Image from "./components/app-image/Image";
 import Video from "./components/app-video/Video";
 
+/**
+ * Feature Discovery
+ */
+import FeatureDiscovery from "./components/app-feature-discovery/FeatureDiscovery";
+
 //import Test from "./components/test_compnt/Test";
 
 /**
@@ -570,6 +575,8 @@ ReactDOM.render(
                }
             ]}
          /> */}
+
+         <FeatureDiscovery/>
       </Row>
    </Container>,
    document.getElementById("container")
