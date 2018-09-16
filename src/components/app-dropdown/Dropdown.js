@@ -10,11 +10,6 @@
 import React, { Component, Fragment } from "react";
 
 /**
- * Import components
- */
-import Button from "../app-button/Button";
-
-/**
  * @class
  * @name Dropdown
  * @description MaterializeCSS Dropdown Component.
@@ -26,7 +21,8 @@ class Dropdown extends Component {
       let config = { ...props };
       this.state = {
          options: {
-            componentId: this._generateComponentId()
+            componentId: this._generateComponentId(),
+            componentTarget: "dropdown"+this._generateComponentId()
          }
       };
       this.element;
@@ -34,7 +30,7 @@ class Dropdown extends Component {
    }
 
    componentDidMount() {
-      this.element = document.querySelector(".dropdown-content");
+      let element = document.querySelector(`.dropdown${this.state.options.componentId}`);
       let options = {
          alignment: this.state.options.alignment || "left",
          autoTrigger: this.state.options.autoTrigger || true,
@@ -50,8 +46,30 @@ class Dropdown extends Component {
          onCloseStart: this.state.options.onCloseStart || (() => {}),
          onCloseEnd: this.state.options.onCloseEnd || (() => {})
       };
-      this.instance = M.Dropdown.init(this.element);
+      let instance = M.Dropdown.init(element, options);
+      this.element = element;
+      this.instance = instance;
    }
+
+   _getInstance = () => {
+      return M.Dropdown.getInstance(this.element);
+   };
+
+   _open = () => {
+      this.instance.open();
+   };
+
+   _close = () => {
+      this.instance.close();
+   };
+
+   _recalculateDimensions = () => {
+      return this.instance.recalculateDimensions();
+   };
+
+   _destroy = () => {
+      this.instance.destroy();
+   };
 
    /**
     * @function
@@ -68,17 +86,37 @@ class Dropdown extends Component {
    render() {
       return (
          <Fragment>
-            <Button
-               type="raised"
-               color="teal"
+            <a
+               className={`dropdown${
+                  this.state.options.componentId
+               } dropdown-trigger btn`}
                href="#"
-               trigger="dropdown-trigger"
-               dataTarget="dropdown1"
-               label="Drop Me!"
-            />
-            <ul id="dropdown1" className="dropdown-content">
+               data-target={this.state.options.componentTarget}>
+               Drop Me!
+            </a>
+
+            <ul id={this.state.options.componentTarget} className="dropdown-content">
                <li>
                   <a href="#!">one</a>
+               </li>
+               <li>
+                  <a href="#!">two</a>
+               </li>
+               <li className="divider" tabIndex="-1" />
+               <li>
+                  <a href="#!">three</a>
+               </li>
+               <li>
+                  <a href="#!">
+                     <i className="material-icons">view_module</i>
+                     four
+                  </a>
+               </li>
+               <li>
+                  <a href="#!">
+                     <i className="material-icons">cloud</i>
+                     five
+                  </a>
                </li>
             </ul>
          </Fragment>
