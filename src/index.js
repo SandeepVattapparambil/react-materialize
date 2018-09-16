@@ -587,7 +587,7 @@ ReactDOM.render(
             <p className="grey-text">A bunch of text</p>
          </FeatureDiscovery> */}
 
-         <Dropdown />
+         <Dropdown dropdownOptions={{coverTrigger: true}}/>
 
       </Row>
    </Container>,
