@@ -97,12 +97,10 @@ import Video from "./components/app-video/Video";
  */
 import FeatureDiscovery from "./components/app-feature-discovery/FeatureDiscovery";
 
-//import Test from "./components/test_compnt/Test";
-
 /**
  * Dropdown
  */
-//import Dropdown from "./components/app-dropdown/Dropdown";
+import Dropdown from "./components/app-dropdown/Dropdown";
 
 /**
  * Import service worker
@@ -576,7 +574,21 @@ ReactDOM.render(
             ]}
          /> */}
 
-         <FeatureDiscovery/>
+         {/* <FeatureDiscovery
+            buttonType="btn-floating"
+            buttonSize="btn-large"
+            buttonColor="lime"
+            overlayColor="lime"
+            icon="menu"
+            label="hello"
+            wavesEffect={true}
+            wavesColor="waves-light">
+            <h5 className="grey-text">Title</h5>
+            <p className="grey-text">A bunch of text</p>
+         </FeatureDiscovery> */}
+
+         <Dropdown/>
+         
       </Row>
    </Container>,
    document.getElementById("container")
