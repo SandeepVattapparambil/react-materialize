@@ -21,8 +21,10 @@ class Dropdown extends Component {
       let config = { ...props };
       this.state = {
          options: {
+            buttonData: config.buttonData || [],
+            listData: config.listData || [],
             componentId: this._generateComponentId(),
-            componentTarget: "dropdown"+this._generateComponentId()
+            componentTarget: "dropdown" + this._generateComponentId()
          }
       };
       this.element;
