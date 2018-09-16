@@ -23,6 +23,7 @@ class Dropdown extends Component {
          options: {
             buttonData: config.buttonData || [],
             listData: config.listData || [],
+            dropdownOptions: config.dropdownOptions || {},
             componentId: this._generateComponentId(),
             componentTarget: "dropdown" + this._generateComponentId()
          }
@@ -34,19 +35,19 @@ class Dropdown extends Component {
    componentDidMount() {
       let element = document.querySelector(`.dropdown${this.state.options.componentId}`);
       let options = {
-         alignment: this.state.options.alignment || "left",
-         autoTrigger: this.state.options.autoTrigger || true,
-         constrainWidth: this.state.options.constrainWidth || true,
-         container: this.state.options.container || null,
-         coverTrigger: this.state.options.coverTrigger || true,
-         closeOnClick: this.state.options.closeOnClick || true,
-         hover: this.state.options.hover || false,
-         inDuration: this.state.options.inDuration || 150,
-         outDuration: this.state.options.outDuration || 250,
-         onOpenStart: this.state.options.onOpenStart || (() => {}),
-         onOpenEnd: this.state.options.onOpenEnd || (() => {}),
-         onCloseStart: this.state.options.onCloseStart || (() => {}),
-         onCloseEnd: this.state.options.onCloseEnd || (() => {})
+         alignment: this.state.options.dropdownOptions.alignment || "left",
+         autoTrigger: this.state.options.dropdownOptions.autoTrigger,
+         constrainWidth: this.state.options.dropdownOptions.constrainWidth,
+         container: this.state.options.dropdownOptions.container || null,
+         coverTrigger: this.state.options.dropdownOptions.coverTrigger,
+         closeOnClick: this.state.options.dropdownOptions.closeOnClick,
+         hover: this.state.options.dropdownOptions.hover,
+         inDuration: this.state.options.dropdownOptions.inDuration || 150,
+         outDuration: this.state.options.dropdownOptions.outDuration || 250,
+         onOpenStart: this.state.options.dropdownOptions.onOpenStart || (() => {}),
+         onOpenEnd: this.state.options.dropdownOptions.onOpenEnd || (() => {}),
+         onCloseStart: this.state.options.dropdownOptions.onCloseStart || (() => {}),
+         onCloseEnd: this.state.options.dropdownOptions.onCloseEnd || (() => {})
       };
       let instance = M.Dropdown.init(element, options);
       this.element = element;
@@ -92,7 +93,7 @@ class Dropdown extends Component {
                className={`dropdown${
                   this.state.options.componentId
                } dropdown-trigger btn`}
-               href="#"
+               href="javascript:void(0)"
                data-target={this.state.options.componentTarget}>
                Drop Me!
             </a>
