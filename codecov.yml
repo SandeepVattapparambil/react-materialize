@@ -4,3 +4,4 @@ ignore:
   - "src/registerServiceWorker.js"
   - "src/components/index.js"
   - "src/components/app-pagination"
+  - "src/components/app-dropdown"
