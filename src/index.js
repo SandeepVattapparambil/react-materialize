@@ -97,7 +97,7 @@ import Video from "./components/app-video/Video";
 /**
  * Dropdown
  */
-import Dropdown from "./components/app-dropdown/Dropdown";
+//import Dropdown from "./components/app-dropdown/Dropdown";
 
 /**
  * Import service worker
@@ -413,8 +413,6 @@ ReactDOM.render(
                "https://placeimg.com/640/480/any"
             ]}
          /> */}
-
-         <Dropdown />
 
          {/* <Carousel
             type="carousel-slider"
