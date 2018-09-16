@@ -42,7 +42,7 @@ class Collapsible extends Component {
     */
    _generateComponentId = () => {
       return Math.random()
-         .toString(36)
+         .toString()
          .substring(7);
    };
 
