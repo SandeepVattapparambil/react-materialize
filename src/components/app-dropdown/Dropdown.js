@@ -10,6 +10,11 @@
 import React, { Component, Fragment } from "react";
 
 /**
+ * import components
+ */
+import Icon from "../app-icon/Icon";
+
+/**
  * @class
  * @name Dropdown
  * @description MaterializeCSS Dropdown Component.
@@ -21,7 +26,7 @@ class Dropdown extends Component {
       let config = { ...props };
       this.state = {
          options: {
-            buttonData: config.buttonData || [],
+            buttonData: config.buttonData || {},
             listData: config.listData || [],
             dropdownOptions: config.dropdownOptions || {},
             componentId: this._generateComponentId(),
@@ -90,37 +95,37 @@ class Dropdown extends Component {
       return (
          <Fragment>
             <a
-               className={`dropdown${
-                  this.state.options.componentId
-               } dropdown-trigger btn`}
+               className={`dropdown${this.state.options.componentId} dropdown-trigger 
+               ${this.state.options.buttonData.buttonType} 
+               ${this.state.options.buttonData.buttonSize}
+               ${this.state.options.buttonData.buttonColor}
+               ${this.state.options.buttonData.labelColor}`}
                href="javascript:void(0)"
                data-target={this.state.options.componentTarget}>
-               Drop Me!
+               {this.state.options.buttonData.icon ? (
+                  <Icon
+                     align={this.state.options.buttonData.iconAlign}
+                     icon={this.state.options.buttonData.icon}
+                  />
+               ) : (
+                  ""
+               )}
+               {this.state.options.buttonData.label}
             </a>
 
             <ul id={this.state.options.componentTarget} className="dropdown-content">
-               <li>
-                  <a href="#!">one</a>
-               </li>
-               <li>
-                  <a href="#!">two</a>
-               </li>
-               <li className="divider" tabIndex="-1" />
-               <li>
-                  <a href="#!">three</a>
-               </li>
-               <li>
-                  <a href="#!">
-                     <i className="material-icons">view_module</i>
-                     four
-                  </a>
-               </li>
-               <li>
-                  <a href="#!">
-                     <i className="material-icons">cloud</i>
-                     five
-                  </a>
-               </li>
+               {this.state.options.listData.map((item, key) => {
+                  return item.divider ? (
+                     <li key={key} className="divider" tabIndex="-1" />
+                  ) : (
+                     <li key={key}>
+                        <a href={item.link} className={item.color ? item.color: ''} onClick={item.onClick}>
+                           {item.icon ? <Icon icon={item.icon} /> : ""}
+                           {item.label}
+                        </a>
+                     </li>
+                  );
+               })}
             </ul>
          </Fragment>
       );
