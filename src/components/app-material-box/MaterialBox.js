@@ -21,6 +21,7 @@ class MaterialBox extends Component {
       let config = { ...props };
       this.state = {
          options: {
+            dataCaption: config.dataCaption || " ",
             imageSrc: config.imageSrc || " ",
             imageAlt: config.imageAlt || " ",
             imageWidth: config.imageWidth || " ",
@@ -77,6 +78,7 @@ class MaterialBox extends Component {
       return (
          <img
             className={`mBox${this.state.options.componentId} materialboxed`}
+            data-caption={this.state.options.dataCaption}
             width={this.state.options.imageWidth}
             alt={this.state.options.imageAlt}
             src={this.state.options.imageSrc}
@@ -84,4 +86,5 @@ class MaterialBox extends Component {
       );
    }
 }
+
 export default MaterialBox;
