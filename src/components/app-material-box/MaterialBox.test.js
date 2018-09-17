@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import MaterialBox from "./MaterialBox";
-import { M } from "../../vendor/materilize.min";
+import { M } from "../../vendor/materialize.min";
 
 it("renders without crashing", () => {
    const div = document.createElement("div");
