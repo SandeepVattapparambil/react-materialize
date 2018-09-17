@@ -622,8 +622,12 @@ ReactDOM.render(
                }
             ]}
          /> */}
-         {/* <MaterialBox imageAlt="test" imageWidth={650} imageSrc="https://images.unsplash.com/photo-1537123547273-e59f4f437f1b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6086121ab2201b250edd1054994522d3&auto=format&fit=crop&w=750&q=80"/> */}
-
+         {/* <MaterialBox
+            imageAlt="test"
+            dataCaption="Hello"
+            imageWidth={650}
+            imageSrc="https://images.unsplash.com/photo-1537123547273-e59f4f437f1b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6086121ab2201b250edd1054994522d3&auto=format&fit=crop&w=750&q=80"
+         /> */}
       </Row>
    </Container>,
    document.getElementById("container")
