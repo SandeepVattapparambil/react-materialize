@@ -92,6 +92,7 @@ import Carousel from "./components/app-carousel/Carousel";
 import Image from "./components/app-image/Image";
 import Video from "./components/app-video/Video";
 import MaterialBox from "./components/app-material-box/MaterialBox";
+import Slider from "./components/app-slider/Slider";
 
 /**
  * Feature Discovery
@@ -628,6 +629,8 @@ ReactDOM.render(
             imageWidth={650}
             imageSrc="https://images.unsplash.com/photo-1537123547273-e59f4f437f1b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6086121ab2201b250edd1054994522d3&auto=format&fit=crop&w=750&q=80"
          /> */}
+
+         <Slider/>
       </Row>
    </Container>,
    document.getElementById("container")
