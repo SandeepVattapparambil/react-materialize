@@ -21,23 +21,38 @@ class Slider extends Component {
       let config = { ...props };
       this.state = {
          options: {
-             componentId: this._generateComponentId()
+            sliderOptions: config.sliderOptions || {},
+            sliderData: config.sliderData || [],
+            componentId: this._generateComponentId()
          }
       };
       this.element;
       this.instance;
    }
 
+   /**
+    * DOM Ready
+    */
    componentDidMount() {
-    this.element = document.querySelector(`.slider${this.state.options.componentId}`);
-    let options = {
-        indicators: this.state.options.indicators,
-        height: this.state.options.height || 400,
-        duration: this.state.options.duration || 500,
-        interval:this.state.options.interval || 6000
-    };
-    this.instance = M.Slider.init(this.element, options);
+      this._componentInit();
    }
+
+   /**
+    * @function
+    * @name _componentInit
+    * Initialize Materialize Slider with options passed in 
+    * @memberof Slider
+    */
+   _componentInit = () => {
+      this.element = document.querySelector(`.slider${this.state.options.componentId}`);
+      let options = {
+         indicators: this.state.options.sliderOptions.indicators,
+         height: this.state.options.sliderOptions.height || 400,
+         duration: this.state.options.sliderOptions.duration || 500,
+         interval: this.state.options.sliderOptions.interval || 6000
+      };
+      this.instance = M.Slider.init(this.element, options);
+   };
 
    /**
     * @function
@@ -55,45 +70,23 @@ class Slider extends Component {
       return (
          <div className={`slider${this.state.options.componentId} slider`}>
             <ul className="slides">
-               <li>
-                  <img src="https://images.unsplash.com/photo-1537152007401-34abcbf532ce?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=382802ab1e00f0cbdc23d7a6d678f5ad&auto=format&fit=crop&w=1510&q=80" />
-                  <div className="caption center-align">
-                     <h3>This is our big Tagline!</h3>
-                     <h5 className="light grey-text text-lighten-3">
-                        Here's our small slogan.
-                     </h5>
-                  </div>
-               </li>
-               <li>
-                  <img src="https://images.unsplash.com/photo-1537151377170-9c19a791bbea?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43b83b0d2ac9fc3db2d9afd19de0bd6a&auto=format&fit=crop&w=750&q=80" />
-                  <div className="caption left-align">
-                     <h3>Left Aligned Caption</h3>
-                     <h5 className="light grey-text text-lighten-3">
-                        Here's our small slogan.
-                     </h5>
-                  </div>
-               </li>
-               <li>
-                  <img src="https://images.unsplash.com/photo-1537135086-ca6612c6550b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=600db5d4133321cad811ff2ceeffe885&auto=format&fit=crop&w=751&q=80" />
-                  <div className="caption right-align">
-                     <h3>Right Aligned Caption</h3>
-                     <h5 className="light grey-text text-lighten-3">
-                        Here's our small slogan.
-                     </h5>
-                  </div>
-               </li>
-               <li>
-                  <img src="https://images.unsplash.com/photo-1537126747582-791955ffd1dc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=14891b91a081b2a9f487f379f5de6d2c&auto=format&fit=crop&w=750&q=80" />
-                  <div className="caption center-align">
-                     <h3>This is our big Tagline!</h3>
-                     <h5 className="light grey-text text-lighten-3">
-                        Here's our small slogan.
-                     </h5>
-                  </div>
-               </li>
+               {this.state.options.sliderData.map((item, key) => {
+                  return (
+                     <li key={key}>
+                        <img src={item.imageUrl} />
+                        <div className={`caption ${item.textAlign}`}>
+                           <h3>{item.title}</h3>
+                           <h5 className="light grey-text text-lighten-3">
+                              {item.subtitle}
+                           </h5>
+                        </div>
+                     </li>
+                  );
+               })}
             </ul>
          </div>
       );
    }
 }
+
 export default Slider;
