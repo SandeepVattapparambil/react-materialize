@@ -91,14 +91,17 @@ class Slider extends Component {
    _prev = () => {
       this._getComponentInstance().prev();
    };
-   
+
    _destroy = () => {
       this._getComponentInstance()._destroy();
    };
 
    render() {
       return (
-         <div className={`slider${this.state.options.componentId} slider`}>
+         <div
+            className={`slider${this.state.options.componentId} slider ${
+               this.state.options.sliderOptions.fullscreen ? "fullscreen" : ""
+            }`}>
             <ul className="slides">
                {this.state.options.sliderData.map((item, key) => {
                   return (
