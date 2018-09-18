@@ -40,7 +40,7 @@ class Slider extends Component {
    /**
     * @function
     * @name _componentInit
-    * Initialize Materialize Slider with options passed in 
+    * Initialize Materialize Slider with options passed in
     * @memberof Slider
     */
    _componentInit = () => {
@@ -64,6 +64,36 @@ class Slider extends Component {
       return Math.random()
          .toString()
          .substring(7);
+   };
+
+   /**
+    * @function
+    * A helper function to get the currenlty initialized carousel
+    * @name _getComponentInstance
+    * @returns {Oobject} - The currenlty initialized carousel component
+    */
+   _getComponentInstance = () => {
+      return M.Slider.getInstance(this.element);
+   };
+
+   _start = () => {
+      this._getComponentInstance().start();
+   };
+
+   _pause = () => {
+      this._getComponentInstance().pause();
+   };
+
+   _next = () => {
+      this._getComponentInstance().next();
+   };
+
+   _prev = () => {
+      this._getComponentInstance().prev();
+   };
+   
+   _destroy = () => {
+      this._getComponentInstance()._destroy();
    };
 
    render() {
