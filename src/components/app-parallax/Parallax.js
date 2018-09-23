@@ -22,15 +22,19 @@ class Parallax extends Component {
       let config = { ...props };
       this.state = {
          options: {
-            componentId: this._generateComponentId(),
-            componentTarget: "dropdown" + this._generateComponentId()
+            imageUrl: config.imageUrl || "",
+            componentId: "parallax"+this._generateComponentId()
          }
       };
       this.element;
       this.instance;
    }
 
-   componentDidMount() {}
+   componentDidMount() {
+      this.element = document.querySelector(`.${this.state.options.componentId}`);
+      let options = {};
+      this.instance = M.Parallax.init(element, options);
+   }
 
    /**
     * @function
@@ -47,7 +51,7 @@ class Parallax extends Component {
    render() {
       return (
          <div className="parallax-container">
-            <div className="parallax">
+            <div className={`${this.state.options.componentId} parallax`}>
                <img src="images/parallax1.jpg" />
             </div>
          </div>
