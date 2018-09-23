@@ -661,7 +661,7 @@ ReactDOM.render(
                }
             ]}
          /> */}
-         <Parallax/>
+         <Parallax parallaxOptions={{responsiveThreshold: 0}}/>
       </Row>
    </Container>,
    document.getElementById("container")
