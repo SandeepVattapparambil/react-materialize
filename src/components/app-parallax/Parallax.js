@@ -22,8 +22,9 @@ class Parallax extends Component {
       let config = { ...props };
       this.state = {
          options: {
+            parallaxOptions: config.parallaxOptions || 0,
             imageUrl: config.imageUrl || "",
-            componentId: "parallax"+this._generateComponentId()
+            componentId: "parallax" + this._generateComponentId()
          }
       };
       this.element;
@@ -31,10 +32,16 @@ class Parallax extends Component {
    }
 
    componentDidMount() {
-      this.element = document.querySelector(`.${this.state.options.componentId}`);
-      let options = {};
-      this.instance = M.Parallax.init(element, options);
+      this._componentInit();
    }
+
+   _componentInit = () => {
+      this.element = document.querySelector(`.${this.state.options.componentId}`);
+      let options = {
+         responsiveThreshold: this.state.options.parallaxOptions.responsiveThreshold || 0
+      };
+      this.instance = M.Parallax.init(this.element, options);
+   };
 
    /**
     * @function
@@ -48,11 +55,19 @@ class Parallax extends Component {
          .substring(7);
    };
 
+   _getInstance = () => {
+      return M.Parallax.getInstance(this.element);
+   };
+
+   _destroy = () => {
+      this._getInstance().destroy();
+   };
+
    render() {
       return (
          <div className="parallax-container">
             <div className={`${this.state.options.componentId} parallax`}>
-               <img src="images/parallax1.jpg" />
+               <img src="https://images.unsplash.com/photo-1537705769289-46ea6988e28c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f3c08588719bca1de9550d527044a4d2&auto=format&fit=crop&w=750&q=80" />
             </div>
          </div>
       );
