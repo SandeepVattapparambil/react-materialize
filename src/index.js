@@ -105,6 +105,11 @@ import FeatureDiscovery from "./components/app-feature-discovery/FeatureDiscover
 import Dropdown from "./components/app-dropdown/Dropdown";
 
 /**
+ * Parallax
+ */
+import Parallax from "./components/app-parallax/Parallax";
+
+/**
  * Import service worker
  */
 import registerServiceWorker from "./registerServiceWorker";
@@ -656,7 +661,7 @@ ReactDOM.render(
                }
             ]}
          /> */}
-         
+         <Parallax/>
       </Row>
    </Container>,
    document.getElementById("container")
