@@ -60,4 +60,5 @@ SOFTWARE.
 Thanks and kudos to: 
 * [MaterializeCSS](https://github.com/dogfalo/materialize/) team for creating a wonderful UI library.
 * [Facebook & React](https://reactjs.org/) team for creating an amazing modern javascript UI framework.
+
 Made with ❤️ by Sandeep Vattapparambil.
