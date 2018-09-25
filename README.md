@@ -26,8 +26,10 @@
 ## Contributing
 
 ## Versioning
+We use [SemVer](https://semver.org/) for versioning. For the versions available, see the [tags](https://github.com/reactMaterial/react-material/tags) on this repository.
 
 ## Authors
+* [Sandeep Vattapparambil](https://github.com/SandeepVattapparambil) - Creator and maintainer of the project.
 
 ## License
 MIT License
