@@ -50,9 +50,9 @@ class Card extends Component {
                medium={this.state.options.column.medium}
                large={this.state.options.column.large}>
                <div
-                  className={`card ${this.state.options.size} ${this.state.options.bgColor} ${
-                     this.state.options.cardActionSticky ? "sticky-action" : ""
-                  }`}>
+                  className={`card ${this.state.options.size} ${
+                     this.state.options.bgColor
+                  } ${this.state.options.cardActionSticky ? "sticky-action" : ""}`}>
                   {this.state.options.cardImage}
                   <div className={`card-content ${this.state.options.textColor}`}>
                      <span
