@@ -6,6 +6,7 @@
 **React Material** is a simple, yet efficient and advanced ReactJS wrapper library for MaterializeCSS UI framework. You can build awesome UI for your web applications using MaterializeCSS Components built and wrapped in ReactJS.
 
 ## Motivation
+[MaterializeCSS Framework]() has been my favourite UI library since its inception. Since then I have used MaterializeCSS for all of my personal, hobby projects as wll as in the projects I worked officially. MaterializeCSS emphasizes on Google's Material Design Principle which makes use of flat UI rich in colors and motion. Google's Android operating system makes use of this design principle. MaterializeCSS framework brings Material Design into the world of web applications.  
 
 ## Build Status
 
